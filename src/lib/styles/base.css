@@ -1,0 +1,117 @@
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: url('$lib/assets/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Regular.ttf')
+		format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: url('$lib/assets/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Bold.ttf')
+		format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: url('$lib/assets/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Italic.ttf')
+		format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: url('$lib/assets/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-BoldItalic.ttf')
+		format('truetype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('$lib/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('$lib/assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('$lib/assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('$lib/assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('$lib/assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: 'Atkinson Hyperlegible', sans-serif;
+	line-height: 1.25;
+}
+
+*:focus-visible {
+	outline-color: var(--color-border-focus);
+	outline-width: var(--size-xs);
+	outline-offset: var(--size-xxs);
+}
+
+html {
+	background-color: var(--color-bg-app);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+	font-size: var(--size-xxl);
+}
+
+h2 {
+	font-size: var(--size-xl);
+}
+
+h3 {
+	font-size: var(--size-lg);
+}
+
+p,
+span,
+label,
+a,
+li,
+div {
+	color: var(--color-fg-high);
+}
