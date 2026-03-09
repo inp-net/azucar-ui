@@ -1,18 +1,18 @@
 <script lang="ts">
-	import '$lib/styles/tokens.css';
-	import '$lib/styles/base.css';
+    import '$lib/styles/tokens.css';
+    import '$lib/styles/base.css';
 
-	let { children } = $props();
+    let { children } = $props();
 </script>
 
 <div class="container">
-	{@render children?.()}
+    {@render children?.()}
 </div>
 
 <style>
-	/* center container */
-	.container {
-		max-width: min(1000px, 100%);
-		margin: 0 auto;
-	}
+    /* center container */
+    .container {
+        max-width: min(1000px, 100%);
+        margin: 0 auto;
+    }
 </style>

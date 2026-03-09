@@ -1,19 +1,18 @@
 default:
-  image: node:24-slim
-  before_script:
-    - corepack enable
-    - pnpm i
+    image: node:24-slim
+    before_script:
+        - corepack enable
+        - pnpm i
 
 build:
-  stage: build
-  rules:
-    - if: $CI_COMMIT_BRANCH
-  image: node:24-slim
-  script:
-    - corepack enable
-    - pnpm i
-    - pnpm pack
-
+    stage: build
+    rules:
+        - if: $CI_COMMIT_BRANCH
+    image: node:24-slim
+    script:
+        - corepack enable
+        - pnpm i
+        - pnpm pack
 # TODO publish to NPM registry
 # publish:
 #   stage: deploy
