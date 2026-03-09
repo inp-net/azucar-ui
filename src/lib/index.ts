@@ -11,3 +11,7 @@ export { default as Frame } from './components/Frame.svelte';
 export { default as Slider } from './components/Slider.svelte';
 export { default as Switch } from './components/Switch.svelte';
 export { default as TextInput } from './components/TextInput.svelte';
+
+// Styles and tokens
+export { default as tokensStyles } from './styles/tokens.css';
+export { default as baseStyles } from './styles/base.css';
