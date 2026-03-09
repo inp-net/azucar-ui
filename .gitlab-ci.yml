@@ -1,3 +1,7 @@
+stages:
+  - build
+  - publish
+
 build:
   stage: build
   rules:
