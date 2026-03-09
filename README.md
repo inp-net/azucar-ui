@@ -27,8 +27,8 @@ Components are self-documented, here is a list of the ones currently available:
 - [Slider](./src/lib/components/Slider.svelte)
 - [Switch](./src/lib/components/Switch.svelte)
 - [Text Input](./src/lib/components/TextInput.svelte)
+- [Badge](./src/lib/components/Badge.svelte)
 - Avatar 🚧
-- Badge 🚧
 - Modal ⌛
 - Tooltip ⌛
 - Toast ⌛

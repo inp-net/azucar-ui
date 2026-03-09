@@ -1,4 +1,5 @@
 <script>
+	import Avatar from '$lib/components/Avatar.svelte';
 	import Badge from '$lib/components/Badge.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Frame from '$lib/components/Frame.svelte';
@@ -179,6 +180,14 @@
 			<Badge>Default</Badge>
 			<Badge variant="outline">Outline</Badge>
 			<Badge variant="ghost">Ghost</Badge>
+		</Flex>
+	</Stack>
+
+	<Stack>
+		<h2>Avatars</h2>
+
+		<Flex>
+			<Avatar src="https://cataas.com/cat" size="small" />
 		</Flex>
 	</Stack>
 </Flex>
