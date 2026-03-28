@@ -34,9 +34,7 @@
     .badge-outline {
         color: var(--color-fg-low);
         background-color: var(--color-bg);
-        outline-color: var(--color-border);
-        outline-width: var(--size-xs);
-        outline-style: auto;
+        box-shadow: inset 0 0 0 1px var(--color-border);
     }
 
     .badge-ghost {

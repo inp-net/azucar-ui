@@ -138,10 +138,9 @@
     .btn-outline {
         color: var(--color-fg-low);
         background-color: var(--color-bg);
-        outline-color: var(--color-border);
-        outline-width: var(--size-xs);
-        outline-style: auto;
-        box-shadow: var(--shadow-surface);
+        box-shadow:
+            0 0 0 1px var(--color-border) inset,
+            var(--shadow-surface);
     }
 
     .btn-outline:hover:not(:disabled) {
@@ -151,12 +150,14 @@
     .btn-outline:active:not(:disabled) {
         color: var(--color-fg-low);
         background-color: var(--color-bg-active);
-        outline-color: var(--color-border-focus);
+        box-shadow:
+            0 0 0 1px var(--color-border-focus) inset,
+            var(--shadow-surface);
         scale: var(--active-scale-factor);
     }
 
     .btn-outline:focus-visible:not(:disabled) {
-        outline-color: var(--color-border-focus);
+        box-shadow: var(--shadow-surface);
     }
 
     .btn-outline:disabled {
@@ -170,6 +171,7 @@
     .btn-ghost {
         background: none;
         color: var(--color-fg-low);
+        font-weight: 600;
     }
 
     .btn-ghost:hover:not(:disabled) {

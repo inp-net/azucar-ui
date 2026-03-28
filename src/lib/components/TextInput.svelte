@@ -68,9 +68,7 @@
         font: inherit;
         padding: var(--padding-y-icon) var(--size-md);
         background-color: var(--color-bg-subtle);
-        outline-color: var(--color-border);
-        outline-width: var(--size-xs);
-        outline-style: auto;
+        box-shadow: inset 0 0 0 1px var(--color-border);
         border-radius: var(--corner-radius);
     }
 
@@ -94,7 +92,7 @@
     }
 
     .input-wrapper:has(input:focus-visible):not(:has(input:disabled)) {
-        outline-color: var(--color-border-focus);
+        box-shadow: inset 0 0 0 1px var(--color-border-focus);
     }
 
     .input-wrapper:has(input:focus-visible):not(:has(input:disabled)) .text-input-icon {
@@ -104,6 +102,6 @@
     .input-wrapper:has(input:disabled) {
         --base-color: var(--color-neutral);
         cursor: not-allowed;
-        outline-color: var(--color-border-subtle);
+        box-shadow: inset 0 0 0 1px var(--color-border-subtle);
     }
 </style>
