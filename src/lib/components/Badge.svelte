@@ -21,7 +21,7 @@
     .badge {
         display: inline-flex;
         align-items: center;
-        padding: var(--size-xs) var(--size-sm);
+        padding: var(--size-xxs) var(--size-sm);
         font-size: var(--size-md);
         color: var(--color-fg-high);
         border-radius: var(--corner-radius);
