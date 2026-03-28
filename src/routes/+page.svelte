@@ -1,13 +1,17 @@
 <script>
-    import Avatar from '$lib/components/Avatar.svelte';
-    import Badge from '$lib/components/Badge.svelte';
-    import Button from '$lib/components/Button.svelte';
-    import Frame from '$lib/components/Frame.svelte';
-    import Flex from '$lib/components/layout/Flex.svelte';
-    import Stack from '$lib/components/layout/Stack.svelte';
-    import Picker from '$lib/components/Picker.svelte';
-    import Switch from '$lib/components/Switch.svelte';
-    import TextInput from '$lib/components/TextInput.svelte';
+    import Picker from '$lib/internal/Picker.svelte';
+    import {
+        Avatar,
+        Badge,
+        Button,
+        ButtonGroup,
+        Frame,
+        Flex,
+        Stack,
+        Switch,
+        Table,
+        TextInput
+    } from '$lib/index.js';
     import {
         CatIcon,
         CheckIcon,
@@ -94,10 +98,13 @@
     <Stack>
         <h2>Sizes</h2>
 
-        <h1>H1 Azucar UI</h1>
-        <h2>H2 Azucar UI</h2>
-        <h3>H3 Azucar UI</h3>
-        <p>P Azucar UI</p>
+        <p style="font-size: var(--size-xxs);">XXS</p>
+        <p style="font-size: var(--size-xs);">XS</p>
+        <p style="font-size: var(--size-sm);">SM</p>
+        <p style="font-size: var(--size-md);">MD</p>
+        <p style="font-size: var(--size-lg);">LG</p>
+        <p style="font-size: var(--size-xl);">XL</p>
+        <p style="font-size: var(--size-xxl);">XXL</p>
     </Stack>
 
     <Stack>
@@ -119,6 +126,11 @@
             <Button icon={TriangleAlert} class="warning" name="Warn" />
             <Button icon={CheckIcon} class="success" name="Success" />
             <Button icon={MoveDiagonalIcon} variant="ghost" name="Move" />
+            <ButtonGroup>
+                <Button>File</Button>
+                <Button variant="outline">Edit</Button>
+                <Button variant="outline">View</Button>
+            </ButtonGroup>
         </Flex>
     </Stack>
 
@@ -187,7 +199,49 @@
         <h2>Avatars</h2>
 
         <Flex>
-            <Avatar src="https://cataas.com/cat" size="small" />
+            <Avatar
+                src="https://churros.inpt.fr/storage/groups/light/skus07ltrsiimapm.png"
+                alt="Bureau des Eleves"
+                size="small"
+            />
+            <Avatar alt="Bureau des Eleves" size="small" />
+            <Avatar
+                src="https://churros.inpt.fr/storage/groups/light/skus07ltrsiimapm.png"
+                alt="Bureau des Eleves"
+                size="large"
+            />
+            <Avatar alt="Bureau des Eleves" size="large" />
         </Flex>
+    </Stack>
+
+    <Stack>
+        <h2>Tables</h2>
+
+        <Table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Quality</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apple</td>
+                    <td>Red</td>
+                    <td>Great</td>
+                </tr>
+                <tr>
+                    <td>Banana</td>
+                    <td>Yellow</td>
+                    <td>Awful</td>
+                </tr>
+                <tr>
+                    <td>Watermelon</td>
+                    <td>Green</td>
+                    <td>Good</td>
+                </tr>
+            </tbody>
+        </Table>
     </Stack>
 </Flex>

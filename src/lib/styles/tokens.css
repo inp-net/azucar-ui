@@ -5,6 +5,7 @@
     /* Sizing based on golden ratio */
     --golden-ratio: 1.618;
 
+    --size-zero: 0;
     --size-xxs: calc(1rem / (3 * var(--golden-ratio)));
     --size-xs: calc(1rem / (2 * var(--golden-ratio)));
     --size-sm: calc(1rem / var(--golden-ratio));

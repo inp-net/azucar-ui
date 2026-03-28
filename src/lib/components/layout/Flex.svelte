@@ -24,7 +24,7 @@
         align = 'stretch',
         justify = 'flex-start',
         gap = 'md',
-        wrap = false,
+        wrap = true,
         style,
         children,
         ...rest

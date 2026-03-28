@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import Switch from './Switch.svelte';
-    import Slider from './Slider.svelte';
-    import Stack from './layout/Stack.svelte';
+    import Switch from '../components/Switch.svelte';
+    import Slider from '../components/Slider.svelte';
+    import Stack from '../components/layout/Stack.svelte';
 
     // --- Picker ---
     // A simple component that allows you to pick a base color and toggle dark mode.
