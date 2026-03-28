@@ -4,18 +4,24 @@
 
     type Props = {
         src?: string;
-        alt?: string;
+        alt: string;
         size?: 'small' | 'large';
     };
 
     const { src, alt = 'Avatar', size = 'small' }: Props = $props();
+
+    const initials = (str: string) =>
+        str
+            .split(' ')
+            .map((word) => word.charAt(0).toUpperCase())
+            .join('');
 </script>
 
 <div class={`avatar avatar-${size}`}>
     {#if src}
         <img {src} {alt} />
     {:else}
-        <span class="initials">{alt.charAt(0).toUpperCase()}</span>
+        <span class="initials">{initials(alt)}</span>
     {/if}
 </div>
 
@@ -32,14 +38,18 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        height: 100%;
     }
 
     .avatar-small {
         width: var(--size-xl);
+        height: var(--size-xl);
     }
 
     .avatar-large {
         width: var(--size-xxl);
+        height: var(--size-xxl);
+        font-size: var(--size-lg);
     }
 
     img {
