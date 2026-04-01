@@ -37,6 +37,14 @@ Or using the color tokens (to create new custom components or custom styles):
 </div>
 ```
 
+To change the base color of the app, you can override the `--base-color` token in your global CSS:
+
+```css
+:root {
+    --base-color: oklch(80.45% 0.1666 72.92); /* Change the base color to the nice Churros orange */
+}
+```
+
 *Read more about the color palette system and the design tokens in the next sections.*
 
 ## Color system
@@ -53,21 +61,21 @@ From one color, the library generates 4 palettes of 14 colors each:
 - **Light Neutral**
 - **Dark Neutral**
 
-| Color name        |    |    |    |    | Usage |
-| ----------------- | -- | -- | -- | -- | ----- |
-| `bg-app`          |    |    |    |    | Background color of the app. |
-| `bg-subtle`       |    |    |    |    | Background color for subtle elements, such as cards or modals. |
-| `bg-hover`        |    |    |    |    | Background color for hover states. |
-| `bg-active`       |    |    |    |    | Background color for active states. |
-| `border-subtle`   |    |    |    |    | Border color for subtle elements or separators. |
-| `border`          |    |    |    |    | Border color for general use. |
-| `border-focus`    |    |    |    |    | Border color for focused elements. |
-| `bg-solid`        |    |    |    |    | Background color for solid elements, such as buttons. *This is also the base color* |
-| `bg-solid-hover`  |    |    |    |    | Background color for solid elements on hover. |
-| `bg-solid-active` |    |    |    |    | Background color for solid elements on active state. |
-| `fg-low`          |    |    |    |    | Foreground/text color low contrast. |
-| `fg-high`         |    |    |    |    | Foreground/text color high contrast. |
-| `fg-solid`        |    |    |    |    | Foreground/text color on top of solid backgrounds, is dark or light based on the contrast between background/foreground |
+| Color name        | Usage |
+| ----------------- | ----- |
+| `bg-app`          | Background color of the app. |
+| `bg-subtle`       | Background color for subtle elements, such as cards or modals. |
+| `bg-hover`        | Background color for hover states. |
+| `bg-active`       | Background color for active states. |
+| `border-subtle`   | Border color for subtle elements or separators. |
+| `border`          | Border color for general use. |
+| `border-focus`    | Border color for focused elements. |
+| `bg-solid`        | Background color for solid elements, such as buttons. *This is also the base color* |
+| `bg-solid-hover`  | Background color for solid elements on hover. |
+| `bg-solid-active` | Background color for solid elements on active state. |
+| `fg-low`          | Foreground/text color low contrast. |
+| `fg-high`         | Foreground/text color high contrast. |
+| `fg-solid`        | Foreground/text color on top of solid backgrounds, is dark or light based on the contrast between background/foreground |
 
 *Prefix the color names by `--color` to get the associated token.*
 
