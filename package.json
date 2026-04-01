@@ -1,6 +1,10 @@
 {
     "name": "azucar-ui",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "description": "Svelte component library that makes your app sweet.",
+    "author": "Matteo Planchet <matteo.planchet@gmail.com>",
+    "license": "MIT",
+    "private": false,
     "scripts": {
         "dev": "vite dev",
         "build": "vite build && npm run prepack",
@@ -55,7 +59,7 @@
         "vitest-browser-svelte": "^2.1.0"
     },
     "keywords": [
-        "svelte"
+        "svelte", "component", "library", "ui", "design system", "css", "javascript", "typescript"
     ],
     "pnpm": {
         "onlyBuiltDependencies": [

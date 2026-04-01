@@ -7,7 +7,7 @@ This design system aims to brings comfort and accessibility to apps. Made for cu
 ## Installation
 
 ```bash
-npm install azucar
+npm install azucar-ui
 ```
 
 ## Usage
