@@ -15,15 +15,15 @@ npm install azucar-ui
 First, import the CSS files in your app (for example in `src/routes/+layout.svelte`):
 
 ```ts
-import "azucar/tokens.css"
-import "azucar/base.css"
+import "azucar-ui/tokens.css"
+import "azucar-ui/base.css"
 ```
 
 Then you can start using the components and the design tokens in your app. For example:
 
 ```html
 <script lang="ts">
-    import { Button } from "azucar"
+    import { Button } from "azucar-ui"
 </script>
 
 <Button>Click me</Button>
