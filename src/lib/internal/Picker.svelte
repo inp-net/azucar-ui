@@ -10,7 +10,7 @@
     let l = $state(0);
     let c = $state(0);
     let h = $state(0);
-    let isDarkTheme = $state(true);
+    let isDarkTheme = $state(false);
     let cornerRadius = $state(0);
 
     onMount(() => {
@@ -31,7 +31,6 @@
         isDarkTheme = colorScheme === 'dark';
         const radius = computedStyle.getPropertyValue('--corner-radius').trim();
         if (radius) {
-            console.log('radius:', radius);
             cornerRadius = parseFloat(radius);
         }
     });
