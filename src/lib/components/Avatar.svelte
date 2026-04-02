@@ -37,6 +37,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: var(--color-fg-solid);
         font-weight: bold;
         height: 100%;
     }

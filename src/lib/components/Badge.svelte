@@ -23,7 +23,7 @@
         align-items: center;
         padding: var(--size-xxs) var(--size-sm);
         font-size: var(--size-md);
-        color: var(--color-fg-high);
+        color: var(--color-fg-solid);
         border-radius: var(--corner-radius);
     }
 
