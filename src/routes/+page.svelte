@@ -10,7 +10,8 @@
         Stack,
         Switch,
         Table,
-        TextInput
+        TextInput,
+        Slider
     } from '$lib/index.js';
     import {
         CatIcon,
@@ -167,16 +168,20 @@
             <Frame>
                 <p>Ceci est une frame.</p>
             </Frame>
-            <Frame shadow={false}>
-                <p>Ceci est une frame sans ombre.</p>
+            <Frame shadow={true}>
+                <p>Ceci est une frame avec ombre.</p>
             </Frame>
 
-            <Frame border={false}>
-                <p>Ceci est une frame sans bordure.</p>
+            <Frame border={true}>
+                <p>Ceci est une frame avec bordure.</p>
             </Frame>
 
             <Frame transparent={true}>
                 <p>Ceci est une frame semi-transparente.</p>
+            </Frame>
+
+            <Frame transparent={true} border={true} shadow={true}>
+                <p>Ceci est une frame semi-transparente avec bordure et ombre.</p>
             </Frame>
 
             <Frame class="neutral">
@@ -243,5 +248,11 @@
                 </tr>
             </tbody>
         </Table>
+    </Stack>
+    <Stack>
+        <h2>Sliders</h2>
+
+        <Slider />
+        <Slider class="neutral" />
     </Stack>
 </Flex>
