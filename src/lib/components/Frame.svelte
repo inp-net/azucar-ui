@@ -48,7 +48,13 @@
     }
 
     .frame.has-border {
-        border: 1px solid var(--color-border);
+        box-shadow: inset 0 0 0 1px var(--color-border);
+    }
+
+    .frame.has-border.has-shadow {
+        box-shadow:
+            inset 0 0 0 1px var(--color-border),
+            var(--shadow-surface);
     }
 
     .frame.has-shadow {
