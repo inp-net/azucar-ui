@@ -16,6 +16,7 @@
 
     /* Corner radius */
     --corner-radius: 1.25rem;
+    --corner-radius-sm: calc(var(--corner-radius) / (2 * var(--golden-ratio)));
     --corner-radius-full: 9999px;
 
     /* Special paddings & gaps */
