@@ -22,13 +22,11 @@
 </label>
 
 <style>
-    :root {
+    .switch {
         --switch-width: 40px;
         --switch-height: 20px;
         --switch-slider-width: 22px;
-    }
 
-    .switch {
         position: relative;
         display: inline-flex;
         align-items: center;

@@ -69,11 +69,9 @@
 </svelte:element>
 
 <style>
-    :root {
-        --active-scale-factor: 0.98;
-    }
-
     .btn {
+        --active-scale-factor: 0.98;
+
         position: relative;
         display: inline-flex;
         align-items: center;

@@ -14,10 +14,6 @@
 </Flex>
 
 <style>
-    :root {
-        --corner-radius-sm: calc(var(--corner-radius) / (2 * var(--golden-ratio)));
-    }
-
     /* first (= */
     :global(.button-group :first-child) {
         border-top-left-radius: var(--corner-radius);
