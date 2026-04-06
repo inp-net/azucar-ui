@@ -11,10 +11,22 @@
         step?: number;
     };
 
-    let { children, value = $bindable(0), min = 0, max = 100, step = 1, ...rest }: Props = $props();
+    let {
+        children,
+        value = $bindable(0),
+        min = 0,
+        max = 100,
+        step = 1,
+        class: className,
+        ...rest
+    }: Props = $props();
+
+    const classes = $derived(
+        ['slider-root', children && 'has-label', className].filter(Boolean).join(' ')
+    );
 </script>
 
-<label class="slider-root" class:has-label={children}>
+<label class={classes}>
     {#if children}
         <span class="label">
             {@render children?.()}
@@ -25,17 +37,15 @@
 </label>
 
 <style>
-    :root {
-        --slider-width: 10rem;
+    .slider-root {
+        --slider-width: 100%;
         --slider-height: 8px;
         --slider-container-height: 20px;
         --slider-thumb-height: 16px;
         --slider-thumb-width: 22px;
         --slider-background: var(--color-bg-solid);
         --slider-background-hover: var(--color-bg-solid-hover);
-    }
 
-    .slider-root {
         position: relative;
         display: inline-flex;
         align-items: center;
@@ -51,7 +61,6 @@
     }
 
     input[type='range'] {
-        --base-color: var(--color-accent);
         appearance: none;
         width: var(--slider-width);
         height: var(--slider-height);

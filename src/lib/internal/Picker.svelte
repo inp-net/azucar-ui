@@ -49,8 +49,8 @@
         step={0.01}
         bind:value={l}
         style={`--slider-background: linear-gradient(to right, oklch(0 ${c} ${h}), oklch(100 ${c} ${h}));\
-                --slider-background-hover: linear-gradient(to right, oklch(0 ${c} ${h}), oklch(100 ${c} ${h}));`}
-        >Lightness</Slider
+                --slider-background-hover: linear-gradient(to right, oklch(0 ${c} ${h}), oklch(100 ${c} ${h}));
+                --slider-width: 10rem;`}>Lightness</Slider
     >
     <Slider
         min={0}
@@ -58,8 +58,8 @@
         step={0.001}
         bind:value={c}
         style={`--slider-background: linear-gradient(to right, oklch(${l} 0 ${h}), oklch(${l} 0.4 ${h}));\
-                --slider-background-hover: linear-gradient(to right, oklch(${l} 0 ${h}), oklch(${l} 0.4 ${h}));`}
-        >Chroma</Slider
+                --slider-background-hover: linear-gradient(to right, oklch(${l} 0 ${h}), oklch(${l} 0.4 ${h}));
+                --slider-width: 10rem;`}>Chroma</Slider
     >
     <Slider
         min={0}
@@ -67,10 +67,16 @@
         step={0.1}
         bind:value={h}
         style={`--slider-background: linear-gradient(to right, oklch(${l} ${c} 0), oklch(${l} ${c} 45), oklch(${l} ${c} 90), oklch(${l} ${c} 135), oklch(${l} ${c} 180), oklch(${l} ${c} 225), oklch(${l} ${c} 270), oklch(${l} ${c} 315), oklch(${l} ${c} 360));\
-                --slider-background-hover: linear-gradient(to right, oklch(${l} ${c} 0), oklch(${l} ${c} 45), oklch(${l} ${c} 90), oklch(${l} ${c} 135), oklch(${l} ${c} 180), oklch(${l} ${c} 225), oklch(${l} ${c} 270), oklch(${l} ${c} 315), oklch(${l} ${c} 360));`}
-        >Hue</Slider
+                --slider-background-hover: linear-gradient(to right, oklch(${l} ${c} 0), oklch(${l} ${c} 45), oklch(${l} ${c} 90), oklch(${l} ${c} 135), oklch(${l} ${c} 180), oklch(${l} ${c} 225), oklch(${l} ${c} 270), oklch(${l} ${c} 315), oklch(${l} ${c} 360));
+                --slider-width: 10rem;`}>Hue</Slider
     >
-    <Slider min={0} max={1.25} step={0.01} bind:value={cornerRadius}>Corner Radius</Slider>
+    <Slider
+        min={0}
+        max={1.25}
+        step={0.01}
+        style={'--slider-width: 10rem;'}
+        bind:value={cornerRadius}>Corner Radius</Slider
+    >
 
     <Switch bind:checked={isDarkTheme}>Dark Mode</Switch>
 </Stack>
