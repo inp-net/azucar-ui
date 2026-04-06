@@ -74,6 +74,7 @@
 :root {
     font-family: 'Atkinson Hyperlegible', sans-serif;
     line-height: 1.25;
+    color: var(--color-fg-high);
 }
 
 *:focus-visible {
@@ -113,5 +114,5 @@ label,
 a,
 li,
 div {
-    color: var(--color-fg-high);
+    text-wrap: balance;
 }
