@@ -10,7 +10,7 @@
         type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
     };
 
-    let { children, icon, class: className, ...rest }: Props = $props();
+    let { children, icon, class: className, value, ...rest }: Props = $props();
 
     const classes = $derived(
         ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
@@ -36,7 +36,7 @@
             </span>
         {/if}
 
-        <input type={rest.type ?? 'text'} {...rest} />
+        <input type={rest.type ?? 'text'} {...rest} bind:value />
     </div>
 </label>
 
