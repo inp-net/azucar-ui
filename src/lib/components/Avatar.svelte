@@ -1,14 +1,16 @@
 <script lang="ts">
+    import type { Size } from '$lib/types.js';
+
     // --- Avatar ---
     // A simple avatar component that displays a user's profile picture or initials.
 
     type Props = {
         src?: string;
         alt: string;
-        size?: 'small' | 'large';
+        size?: Size;
     };
 
-    const { src, alt = 'Avatar', size = 'small' }: Props = $props();
+    const { src, alt = 'Avatar', size = 'sm' }: Props = $props();
 
     const initials = (str: string) =>
         str
@@ -17,7 +19,14 @@
             .join('');
 </script>
 
-<div class={`avatar avatar-${size}`}>
+<div
+    class={`avatar`}
+    style={`
+        width: var(--size-${size});
+        height: var(--size-${size});
+        font-size: calc(var(--size-${size}) / ${Math.PI});
+    `}
+>
     {#if src}
         <img {src} {alt} />
     {:else}
@@ -40,17 +49,6 @@
         color: var(--color-fg-solid);
         font-weight: bold;
         height: 100%;
-    }
-
-    .avatar-small {
-        width: var(--size-xl);
-        height: var(--size-xl);
-    }
-
-    .avatar-large {
-        width: var(--size-xxl);
-        height: var(--size-xxl);
-        font-size: var(--size-lg);
     }
 
     img {

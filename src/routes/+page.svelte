@@ -207,15 +207,21 @@
             <Avatar
                 src="https://churros.inpt.fr/storage/groups/light/skus07ltrsiimapm.png"
                 alt="Bureau des Eleves"
-                size="small"
+                size="xxl"
             />
-            <Avatar alt="Bureau des Eleves" size="small" />
+            <Avatar alt="Bureau des Eleves" size="xxl" />
             <Avatar
                 src="https://churros.inpt.fr/storage/groups/light/skus07ltrsiimapm.png"
                 alt="Bureau des Eleves"
-                size="large"
+                size="xl"
             />
-            <Avatar alt="Bureau des Eleves" size="large" />
+            <Avatar alt="Bureau des Eleves" size="xl" />
+            <Avatar
+                src="https://churros.inpt.fr/storage/groups/light/skus07ltrsiimapm.png"
+                alt="Bureau des Eleves"
+                size="lg"
+            />
+            <Avatar alt="Bureau des Eleves" size="lg" />
         </Flex>
     </Stack>
 
