@@ -1,5 +1,7 @@
 # Azucar UI
 
+**Demo page: https://azucar.inpt.fr**
+
 The design system that makes your app sweet.
 
 This design system aims to brings comfort and accessibility to apps. Made for customizability and ease of use, it brings a strong color palette system and multiple settings.
