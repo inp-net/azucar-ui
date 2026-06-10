@@ -8,14 +8,18 @@
         src?: string;
         alt: string;
         size?: Size;
+        initials?: string;
     };
 
-    const { src, alt = 'Avatar', size = 'sm' }: Props = $props();
+    const { src, alt = 'Avatar', size = 'sm', initials }: Props = $props();
 
-    const initials = (str: string) =>
+    const initialsLimit = 4;
+
+    const getInitials = (str: string) =>
         str
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase())
+            .slice(0, initialsLimit)
             .join('');
 </script>
 
@@ -30,7 +34,7 @@
     {#if src}
         <img {src} {alt} />
     {:else}
-        <span class="initials">{initials(alt)}</span>
+        <span class="initials">{initials || getInitials(alt)}</span>
     {/if}
 </div>
 
