@@ -10,14 +10,14 @@
         type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
     };
 
-    let { children, icon, class: className, value, ...rest }: Props = $props();
+    let { children, icon, class: className, value, style, ...rest }: Props = $props();
 
     const classes = $derived(
         ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
     );
 </script>
 
-<label class={classes}>
+<label class={classes} {style}>
     {#if children}
         <span class="label">
             {@render children?.()}
