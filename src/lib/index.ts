@@ -15,3 +15,4 @@ export { default as SkeletonText } from './components/SkeletonText.svelte';
 export { default as Switch } from './components/Switch.svelte';
 export { default as Table } from './components/Table.svelte';
 export { default as TextInput } from './components/TextInput.svelte';
+export { default as Tooltip } from './components/Tooltip.svelte';

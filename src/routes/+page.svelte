@@ -22,8 +22,13 @@
         MoveDiagonalIcon,
         SearchIcon,
         TriangleAlert,
-        XIcon
+        XIcon,
+        InfoIcon,
+        CircleArrowRightIcon,
+        CircleArrowDownIcon,
+        CircleArrowUpIcon
     } from '@lucide/svelte';
+    import Tooltip from '$lib/components/Tooltip.svelte';
 
     const scales = [
         'color-bg-app',
@@ -114,17 +119,17 @@
         <h2>Buttons</h2>
 
         <Flex>
-            <Button>Coucou</Button>
-            <Button variant="outline">Coucou</Button>
-            <Button variant="ghost">Coucou</Button>
-            <Button disabled>Coucou</Button>
-            <Button variant="outline" disabled>Coucou</Button>
-            <Button variant="ghost" disabled>Coucou</Button>
+            <Button>Hello</Button>
+            <Button variant="outline">Hello</Button>
+            <Button variant="ghost">Hello</Button>
+            <Button disabled>Hello</Button>
+            <Button variant="outline" disabled>Hello</Button>
+            <Button variant="ghost" disabled>Hello</Button>
         </Flex>
 
         <Flex>
-            <Button icon={CircleArrowLeftIcon} --base-color="#FFCD22">Coucou</Button>
-            <Button icon={CatIcon}>Miaou</Button>
+            <Button icon={CircleArrowLeftIcon} --base-color="#FFCD22">Hello</Button>
+            <Button icon={CatIcon}>Meow</Button>
             <Button icon={XIcon} class="danger" name="Delete" />
             <Button icon={TriangleAlert} class="warning" name="Warn" />
             <Button icon={CheckIcon} class="success" name="Success" />
@@ -153,12 +158,12 @@
         <h2>Text inputs</h2>
 
         <Flex>
-            <TextInput name="aaa" placeholder="Votre nom...">Label</TextInput>
+            <TextInput name="aaa" placeholder="Jaurès">Name</TextInput>
             <TextInput required>Label</TextInput>
-            <TextInput icon={SearchIcon} placeholder="Rechercher...">Recherche</TextInput>
-            <TextInput disabled required placeholder="aaaaa">Label</TextInput>
+            <TextInput icon={SearchIcon} placeholder="Search...">Search</TextInput>
+            <TextInput disabled required placeholder="Toulouse">City</TextInput>
             <TextInput disabled>Label</TextInput>
-            <TextInput disabled icon={SearchIcon} placeholder="Rechercher...">Recherche</TextInput>
+            <TextInput disabled icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled />
         </Flex>
     </Stack>
@@ -168,26 +173,26 @@
 
         <Flex>
             <Frame>
-                <p>Ceci est une frame.</p>
+                <p>This is a frame.</p>
             </Frame>
             <Frame shadow={true}>
-                <p>Ceci est une frame avec ombre.</p>
+                <p>This is a frame with a shadow.</p>
             </Frame>
 
             <Frame border={true}>
-                <p>Ceci est une frame avec bordure.</p>
+                <p>This is a frame with a border.</p>
             </Frame>
 
             <Frame transparent={true}>
-                <p>Ceci est une frame semi-transparente.</p>
+                <p>This is a semi-transparent frame.</p>
             </Frame>
 
             <Frame transparent={true} border={true} shadow={true}>
-                <p>Ceci est une frame semi-transparente avec bordure et ombre.</p>
+                <p>This is a semi-transparent frame with a border and a shadow.</p>
             </Frame>
 
             <Frame class="neutral">
-                <p>Ceci est une frame neutre.</p>
+                <p>This is a neutral frame.</p>
             </Frame>
         </Flex>
     </Stack>
@@ -271,8 +276,35 @@
             <Skeleton width="200px" height="200px" borderRadius="50%" />
         </Flex>
         <Flex>
-            <h2><SkeletonText lines={1} width="12ch" /></h2>
+            <h2><SkeletonText lines={1} width="8ch" /></h2>
             <SkeletonText lines={3} />
+        </Flex>
+    </Stack>
+
+    <Stack>
+        <h2>Tooltips</h2>
+
+        <Flex>
+            <p>Bla bla bla</p>
+            <Tooltip text="From each according to his ability, to each according to his need">
+                <InfoIcon />
+            </Tooltip>
+
+            <Tooltip text="On the left" position="left">
+                <CircleArrowLeftIcon />
+            </Tooltip>
+
+            <Tooltip text="On the right" position="right">
+                <CircleArrowRightIcon />
+            </Tooltip>
+
+            <Tooltip text="On the top" position="top">
+                <CircleArrowUpIcon />
+            </Tooltip>
+
+            <Tooltip text="On the bottom" position="bottom">
+                <CircleArrowDownIcon />
+            </Tooltip>
         </Flex>
     </Stack>
 </Flex>

@@ -104,10 +104,10 @@ Components are self-documented, here is a list of the ones currently available:
 - [Skeleton](./src/lib/components/Skeleton.svelte)
 - [SkeletonText](./src/lib/components/SkeletonText.svelte)
 - [Switch](./src/lib/components/Switch.svelte)
-- [Text Input](./src/lib/components/TextInput.svelte)
 - [Table](./src/lib/components/Table.svelte)
+- [Text Input](./src/lib/components/TextInput.svelte)
+- [Tooltip](./src/lib/components/Tooltip.svelte)
 - Modal ⌛
-- Tooltip ⌛
 - Toast ⌛
 - Tabs ⌛
 
