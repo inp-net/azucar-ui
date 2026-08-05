@@ -11,7 +11,9 @@
         Switch,
         Table,
         TextInput,
-        Slider
+        Slider,
+        Skeleton,
+        SkeletonText
     } from '$lib/index.js';
     import {
         CatIcon,
@@ -260,5 +262,17 @@
 
         <Slider />
         <Slider class="neutral" />
+    </Stack>
+
+    <Stack>
+        <h2>Skeletons</h2>
+        <Flex>
+            <Skeleton width="200px" height="200px" />
+            <Skeleton width="200px" height="200px" borderRadius="50%" />
+        </Flex>
+        <Flex>
+            <h2><SkeletonText lines={1} width="12ch" /></h2>
+            <SkeletonText lines={3} />
+        </Flex>
     </Stack>
 </Flex>

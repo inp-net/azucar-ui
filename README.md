@@ -101,6 +101,8 @@ Components are self-documented, here is a list of the ones currently available:
 - [Frame](./src/lib/components/Frame.svelte)
 - [Button Group](./src/lib/components/ButtonGroup.svelte) 
 - [Slider](./src/lib/components/Slider.svelte)
+- [Skeleton](./src/lib/components/Skeleton.svelte)
+- [SkeletonText](./src/lib/components/SkeletonText.svelte)
 - [Switch](./src/lib/components/Switch.svelte)
 - [Text Input](./src/lib/components/TextInput.svelte)
 - [Table](./src/lib/components/Table.svelte)
