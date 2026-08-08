@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Icon } from '@lucide/svelte';
+    import { LoaderCircleIcon, type Icon } from '@lucide/svelte';
     import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
     // --- Button ---
@@ -23,6 +23,7 @@
         variant?: 'default' | 'outline' | 'ghost';
         ref?: HTMLElement | null;
         icon?: typeof Icon;
+        loading?: boolean;
     };
 
     let {
@@ -32,6 +33,7 @@
         href,
         ref,
         icon,
+        loading,
         class: className,
         children,
         ...rest
@@ -41,7 +43,14 @@
     const iconSize = $derived(children ? '1em' : '1.25em');
 
     const classes = $derived(
-        ['btn', `btn-${variant}`, icon && 'btn-has-icon', !children && 'btn-icon-only', className]
+        [
+            'btn',
+            `btn-${variant}`,
+            icon && 'btn-has-icon',
+            !children && 'btn-icon-only',
+            loading && 'btn-loading',
+            className
+        ]
             .filter(Boolean)
             .join(' ')
     );
@@ -58,8 +67,8 @@
     class={classes}
     {...rest}
 >
-    {#if icon}
-        {@const Icon = icon}
+    {#if icon || loading}
+        {@const Icon = loading ? LoaderCircleIcon : icon}
         <Icon size={iconSize} class="btn-icon" aria-hidden="true" />
     {/if}
 
@@ -186,5 +195,23 @@
         --base-color: var(--color-neutral);
         color: var(--color-border-subtle);
         cursor: not-allowed;
+    }
+
+    .btn-loading {
+        pointer-events: none;
+    }
+
+    .btn-loading > :global(.btn-icon) {
+        animation: spin 1s linear infinite;
+        transform-origin: center;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>

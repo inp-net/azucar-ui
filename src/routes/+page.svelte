@@ -14,7 +14,7 @@
         Slider,
         Skeleton,
         SkeletonText
-    } from '$lib/index.js';
+    } from '$lib/index.ts';
     import {
         CatIcon,
         CheckIcon,
@@ -129,6 +129,7 @@
             <Button variant="outline">Hello</Button>
             <Button variant="ghost">Hello</Button>
             <Button disabled>Hello</Button>
+            <Button loading>Submit</Button>
             <Button variant="outline" disabled>Hello</Button>
             <Button variant="ghost" disabled>Hello</Button>
         </Flex>
