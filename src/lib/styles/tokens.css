@@ -183,19 +183,3 @@
             calc(c * var(--cf12)) h
     );
 }
-
-.success {
-    --base-color: var(--color-success);
-}
-
-.warning {
-    --base-color: var(--color-warning);
-}
-
-.danger {
-    --base-color: var(--color-danger);
-}
-
-.neutral {
-    --base-color: var(--color-neutral);
-}
