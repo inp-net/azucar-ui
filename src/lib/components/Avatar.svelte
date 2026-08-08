@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Size } from '$lib/types.js';
+    import type { Size } from '$lib/types.ts';
 
     // --- Avatar ---
     // A simple avatar component that displays a user's profile picture or initials.

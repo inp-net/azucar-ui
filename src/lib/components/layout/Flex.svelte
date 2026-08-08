@@ -1,7 +1,7 @@
 <script lang="ts">
     import Box from './Box.svelte';
     import type { HTMLAttributes } from 'svelte/elements';
-    import type { Size } from '$lib/types.js';
+    import type { Size } from '$lib/types.ts';
     import type * as CSS from 'csstype';
 
     // --- Flex ---
