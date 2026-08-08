@@ -48,6 +48,12 @@
     ];
 </script>
 
+{#snippet colorFrameWithTooltip(/** @type {string} */ color)}
+    <Tooltip text={color}>
+        <Frame style={`background-color: var(--${color})`} />
+    </Tooltip>
+{/snippet}
+
 <Flex direction="column" gap="xxl" margin="lg">
     <Stack>
         <h1>Azucar UI</h1>
@@ -69,7 +75,7 @@
                 <h3>Light Base Color</h3>
                 <Flex style="color-scheme: light">
                     {#each scales as scale}
-                        <Frame style={`background-color: var(--${scale})`} />
+                        {@render colorFrameWithTooltip(scale)}
                     {/each}
                 </Flex>
             </Stack>
@@ -78,7 +84,7 @@
                 <h3>Dark Base Color</h3>
                 <Flex style="color-scheme: dark">
                     {#each scales as scale}
-                        <Frame style={`background-color: var(--${scale})`} />
+                        {@render colorFrameWithTooltip(scale)}
                     {/each}
                 </Flex>
             </Stack>
@@ -87,7 +93,7 @@
                 <h3>Light Neutral Color</h3>
                 <Flex style="color-scheme: light; --base-color: var(--color-neutral);">
                     {#each scales as scale}
-                        <Frame style={`background-color: var(--${scale})`} />
+                        {@render colorFrameWithTooltip(scale)}
                     {/each}
                 </Flex>
             </Stack>
@@ -96,7 +102,7 @@
                 <h3>Dark Neutral Color</h3>
                 <Flex style="color-scheme: dark; --base-color: var(--color-neutral);">
                     {#each scales as scale}
-                        <Frame style={`background-color: var(--${scale})`} />
+                        {@render colorFrameWithTooltip(scale)}
                     {/each}
                 </Flex>
             </Stack>

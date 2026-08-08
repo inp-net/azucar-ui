@@ -41,6 +41,7 @@
         text-align: center;
         padding: var(--size-xs) var(--size-sm);
         border-radius: var(--corner-radius);
+        color: var(--color-fg-high);
         background: var(--color-bg);
         opacity: 0;
         pointer-events: none;
