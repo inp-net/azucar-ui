@@ -314,4 +314,34 @@
             </Tooltip>
         </Flex>
     </Stack>
+
+    <Stack>
+        <h2>Custom layouts</h2>
+
+        <Frame border={true}>
+            <Flex gap="sm" direction="column" wrap={false}>
+                <p>Horizontal Scroll</p>
+                <Flex scrollable={true} wrap={false} gap="xs">
+                    {#each Array(30) as _, i}
+                        <Badge>Scroll</Badge>
+                    {/each}
+                </Flex>
+                <Flex scrollable={true} wrap={false} gap="xs">
+                    {#each Array(30) as _, i}
+                        <Button>Click scroll</Button>
+                    {/each}
+                </Flex>
+                <Flex scrollable={true} wrap={false} gap="xs">
+                    {#each Array(30) as _, i}
+                        <Frame border={true} style="flex-shrink: 0;">
+                            <Flex direction="column" wrap={false}>
+                                <p><b>Card Test</b></p>
+                                <p>Voici une carte</p>
+                            </Flex>
+                        </Frame>
+                    {/each}
+                </Flex>
+            </Flex>
+        </Frame>
+    </Stack>
 </Flex>

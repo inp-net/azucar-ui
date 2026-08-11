@@ -15,6 +15,7 @@
         justify?: CSS.Properties['justifyContent'];
         gap?: Size;
         wrap?: boolean;
+        scrollable?: boolean;
     };
 
     let {
@@ -25,6 +26,7 @@
         justify = 'flex-start',
         gap = 'md',
         wrap = true,
+        scrollable = false,
         style,
         children,
         ...rest
@@ -38,10 +40,13 @@
 		${margin ? `margin: var(--size-${margin});` : ''}
 		flex-direction:${direction};
 		align-items:${align};
+        max-width: 100%;
+        min-width: 0;
 		justify-content:${justify};
 		${gap ? `gap:var(--size-${gap});` : ''}
 		flex-wrap:${wrap ? 'wrap' : 'nowrap'};
-		${style ?? ''}
+        ${scrollable ? 'flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; white-space: nowrap; width: 100%; scrollbar-width: thin; -webkit-overflow-scrolling: touch;' : ''}
+		${style ?? ''};
 	`}
     {...rest}
 >
