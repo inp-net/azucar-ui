@@ -57,7 +57,7 @@
 </script>
 
 <svelte:element
-    this={href ? 'a' : 'button'}
+    this={href && !disabled ? 'a' : 'button'}
     type={href ? undefined : type}
     href={href && !disabled ? href : undefined}
     {disabled}
