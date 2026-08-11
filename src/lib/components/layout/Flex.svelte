@@ -36,18 +36,18 @@
 <Box
     display="flex"
     style={`
-    	${padding ? `padding: var(--size-${padding});` : ''}
-		${margin ? `margin: var(--size-${margin});` : ''}
-		flex-direction:${direction};
-		align-items:${align};
+        ${padding ? `padding: var(--size-${padding});` : ''}
+        ${margin ? `margin: var(--size-${margin});` : ''}
+        flex-direction:${direction};
+        align-items:${align};
         max-width: 100%;
         min-width: 0;
-		justify-content:${justify};
-		${gap ? `gap:var(--size-${gap});` : ''}
-		flex-wrap:${wrap ? 'wrap' : 'nowrap'};
+        justify-content:${justify};
+        ${gap ? `gap:var(--size-${gap});` : ''}
+        flex-wrap:${wrap ? 'wrap' : 'nowrap'};
         ${scrollable ? 'flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; white-space: nowrap; width: 100%; scrollbar-width: thin; -webkit-overflow-scrolling: touch;' : ''}
-		${style ?? ''};
-	`}
+        ${style ?? ''};
+    `}
     {...rest}
 >
     {@render children?.()}
