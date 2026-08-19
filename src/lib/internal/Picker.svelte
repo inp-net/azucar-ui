@@ -3,6 +3,7 @@
     import Switch from '../components/Switch.svelte';
     import Slider from '../components/Slider.svelte';
     import Stack from '../components/layout/Stack.svelte';
+    import Flex from '../components/layout/Flex.svelte';
 
     // --- Picker ---
     // A simple component that allows you to pick a base color and toggle dark mode.
@@ -81,10 +82,12 @@
     <Switch bind:checked={isDarkTheme}>Dark Mode</Switch>
 </Stack>
 
-<Stack>
-    <h3>CSS Variables</h3>
-    <Stack gap="xxs">
-        <p>--base-color: oklch({l} {c} {h})</p>
-        <p>--corner-radius: {cornerRadius}</p>
-    </Stack>
-</Stack>
+<Flex direction="row">
+    <details>
+        <summary style="margin-bottom: 5px;">CSS Variables</summary>
+        <Stack gap="xxs">
+            <p>--base-color: oklch({l} {c} {h})</p>
+            <p>--corner-radius: {cornerRadius}</p>
+        </Stack>
+    </details>
+</Flex>
