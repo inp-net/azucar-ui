@@ -124,6 +124,10 @@
     <Stack>
         <h2>Buttons</h2>
 
+        <Button href="/" disabled={true}>Text</Button>
+        <Button variant="outline" href="/" disabled={true}>Text</Button>
+        <Button variant="ghost" href="/" disabled={true}>Text</Button>
+
         <Flex>
             <Button>Hello</Button>
             <Button variant="outline">Hello</Button>
