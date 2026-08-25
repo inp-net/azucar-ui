@@ -34,17 +34,17 @@
 <Box
     display="flex"
     style={`
-    	${padding ? `padding: var(--size-${padding});` : ''}
-		${margin ? `margin: var(--size-${margin});` : ''}
-		flex-direction:${direction};
-		align-items:${align};
-		justify-content:${justify};
+        ${padding ? `padding: var(--size-${padding});` : ''}
+        ${margin ? `margin: var(--size-${margin});` : ''}
+        flex-direction:${direction};
+        align-items:${align};
+        justify-content:${justify};
         max-width: 100%;
         min-width: 0;
-		${gap ? `gap:var(--size-${gap});` : ''}
-		flex-wrap:${wrap ? 'wrap' : 'nowrap'};
-		${style ?? ''}
-	`}
+        ${gap ? `gap:var(--size-${gap});` : ''}
+        flex-wrap:${wrap ? 'wrap' : 'nowrap'};
+        ${style ?? ''}
+    `}
     {...rest}
 >
     {@render children?.()}
