@@ -126,9 +126,11 @@
 
         <Flex>
             <Button>Hello</Button>
+            <Button href="#">Link</Button>
             <Button variant="outline">Hello</Button>
             <Button variant="ghost">Hello</Button>
             <Button disabled>Hello</Button>
+            <Button href="#" disabled>Link</Button>
             <Button loading>Submit</Button>
             <Button variant="outline" disabled>Hello</Button>
             <Button variant="ghost" disabled>Hello</Button>
