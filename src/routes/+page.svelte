@@ -13,7 +13,8 @@
         TextInput,
         Slider,
         Skeleton,
-        SkeletonText
+        SkeletonText,
+        Scroll
     } from '$lib/index.ts';
     import {
         CatIcon,
@@ -75,7 +76,7 @@
     </Tooltip>
 {/snippet}
 
-<Flex direction="column" gap="xxl" margin="lg">
+<Flex direction="column" gap="xxl" padding="lg">
     <Stack>
         <h1>Azucar UI</h1>
         <p>The design system that makes your app sweet.</p>
@@ -99,7 +100,7 @@
         <Stack gap="lg">
             <Stack>
                 <h3>Light Base Color</h3>
-                <Flex style="color-scheme: light">
+                <Flex style="color-scheme: light;">
                     {#each scales as scale}
                         {@render colorFrameWithTooltip(scale)}
                     {/each}
@@ -148,6 +149,20 @@
     </Stack>
 
     <Stack>
+        <h2>Layouts</h2>
+
+        <Stack>
+            <h3>Scroll</h3>
+            <Scroll>
+                {#each Array(60)}
+                    <div style="width: 30px; height: 30px; background-color: var(--color-bg-solid)">
+                    </div>
+                {/each}
+            </Scroll>
+        </Stack>
+    </Stack>
+
+    <Stack>
         <h2>Buttons</h2>
 
         <Flex>
@@ -176,14 +191,16 @@
             </ButtonGroup>
         </Flex>
 
-        <ButtonGroup>
-            <Button>Button 1</Button>
-            <Button variant="outline">Button 2</Button>
-            <Button variant="outline">Button 3</Button>
-            <Button variant="outline">Button 4</Button>
-            <Button variant="outline">Button 5</Button>
-            <Button variant="outline">Button 6</Button>
-        </ButtonGroup>
+        <Scroll>
+            <ButtonGroup>
+                <Button>Button 1</Button>
+                <Button variant="outline">Button 2</Button>
+                <Button variant="outline">Button 3</Button>
+                <Button variant="outline">Button 4</Button>
+                <Button variant="outline">Button 5</Button>
+                <Button variant="outline">Button 6</Button>
+            </ButtonGroup>
+        </Scroll>
     </Stack>
 
     <Stack>

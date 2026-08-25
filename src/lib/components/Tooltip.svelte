@@ -33,7 +33,8 @@
     }
 
     .tooltip-bubble {
-        display: inline-block;
+        display: none;
+        transition-behavior: allow-discrete;
         position: absolute;
         z-index: 1000;
         width: max-content;
@@ -59,6 +60,7 @@
         opacity: 1;
         transform: translateY(0);
         visibility: visible;
+        display: inline-block;
     }
 
     .tooltip-top {
@@ -98,5 +100,23 @@
     .tooltip-wrapper:hover .tooltip-right,
     .tooltip-wrapper:focus-within .tooltip-right {
         transform: translate(0, -50%);
+    }
+
+    @starting-style {
+        .tooltip-wrapper:hover .tooltip-top,
+        .tooltip-wrapper:focus-within .tooltip-top,
+        .tooltip-wrapper:hover .tooltip-bottom,
+        .tooltip-wrapper:focus-within .tooltip-bottom {
+            opacity: 0;
+            transform: translate(-50%, 0.25rem);
+        }
+
+        .tooltip-wrapper:hover .tooltip-left,
+        .tooltip-wrapper:focus-within .tooltip-left,
+        .tooltip-wrapper:hover .tooltip-right,
+        .tooltip-wrapper:focus-within .tooltip-right {
+            opacity: 0;
+            transform: translate(0.25rem, -50%);
+        }
     }
 </style>
