@@ -10,7 +10,7 @@
         type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
     };
 
-    let { children, icon, class: className, value, style, ...rest }: Props = $props();
+    let { children, icon, class: className, value = $bindable(), style, ...rest }: Props = $props();
 
     const classes = $derived(
         ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
