@@ -58,7 +58,7 @@
         step={0.001}
         bind:value={c}
         style={`--slider-background: linear-gradient(to right, oklch(${l} 0 ${h}), oklch(${l} 0.4 ${h}));\
-                --slider-background-hover: linear-gradient(to right, oklch(${l} 0 ${h}), oklch(${l} 0.4 ${h}));
+                --slider-background-hover: var(--slider-background);
                 --slider-width: 10rem;`}>Chroma</Slider
     >
     <Slider
@@ -66,8 +66,8 @@
         max={360}
         step={0.1}
         bind:value={h}
-        style={`--slider-background: linear-gradient(to right, oklch(${l} ${c} 0), oklch(${l} ${c} 45), oklch(${l} ${c} 90), oklch(${l} ${c} 135), oklch(${l} ${c} 180), oklch(${l} ${c} 225), oklch(${l} ${c} 270), oklch(${l} ${c} 315), oklch(${l} ${c} 360));\
-                --slider-background-hover: linear-gradient(to right, oklch(${l} ${c} 0), oklch(${l} ${c} 45), oklch(${l} ${c} 90), oklch(${l} ${c} 135), oklch(${l} ${c} 180), oklch(${l} ${c} 225), oklch(${l} ${c} 270), oklch(${l} ${c} 315), oklch(${l} ${c} 360));
+        style={`--slider-background: linear-gradient(to right, oklch(${l} ${c} 0), oklch(${l} ${c} 45), oklch(${l} ${c} 90), oklch(${l} ${c} 135), oklch(${l} ${c} 180), oklch(${l} ${c} 225), oklch(${l} ${c} 270), oklch(${l} ${c} 315), oklch(${l} ${c} 360));
+                --slider-background-hover: var(--slider-background);
                 --slider-width: 10rem;`}>Hue</Slider
     >
     <Slider

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Picker from '$lib/internal/Picker.svelte';
     import {
         Avatar,
@@ -26,7 +26,8 @@
         InfoIcon,
         CircleArrowRightIcon,
         CircleArrowDownIcon,
-        CircleArrowUpIcon
+        CircleArrowUpIcon,
+        CopyIcon
     } from '@lucide/svelte';
     import Tooltip from '$lib/components/Tooltip.svelte';
 
@@ -46,11 +47,31 @@
         'color-fg-high',
         'color-fg-solid'
     ];
+
+    const copyToClipboard = (text: string) => {
+        navigator.clipboard.writeText(text);
+    };
+
+    const copySettings = () => {
+        const styles = getComputedStyle(document.documentElement);
+        const settings = {
+            '--base-color': styles.getPropertyValue('--base-color').trim(),
+            '--corner-radius': styles.getPropertyValue('--corner-radius').trim(),
+            'color-scheme': styles.getPropertyValue('color-scheme').trim()
+        };
+        copyToClipboard(JSON.stringify(settings, null, 2));
+    };
 </script>
 
-{#snippet colorFrameWithTooltip(/** @type {string} */ color)}
+{#snippet colorFrameWithTooltip(color: string)}
     <Tooltip text={color}>
-        <Frame style={`background-color: var(--${color})`} />
+        <Frame
+            style={`background-color: var(--${color}); cursor: pointer;`}
+            onclick={(event) =>
+                copyToClipboard(
+                    getComputedStyle(event.currentTarget as HTMLElement).backgroundColor
+                )}
+        />
     </Tooltip>
 {/snippet}
 
@@ -62,13 +83,18 @@
 
     <Frame style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
         <Stack>
-            <h3>Settings</h3>
+            <Flex justify="space-between">
+                <h3>Settings</h3>
+                <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
+            </Flex>
             <Picker />
         </Stack>
     </Frame>
 
     <Stack>
         <h2>Color System</h2>
+
+        <p>Click to copy a color.</p>
 
         <Stack gap="lg">
             <Stack>
