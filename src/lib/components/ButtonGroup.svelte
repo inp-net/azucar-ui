@@ -9,7 +9,7 @@
     let { children }: Props = $props();
 </script>
 
-<Flex class="button-group" gap="xs">
+<Flex class="button-group" gap="xs" wrap={false}>
     {@render children?.()}
 </Flex>
 
@@ -33,5 +33,10 @@
         border-bottom-left-radius: var(--corner-radius-sm);
         border-top-right-radius: var(--corner-radius);
         border-bottom-right-radius: var(--corner-radius);
+    }
+
+    /* make the button take all the space if not in flexbox */
+    :global(.button-group > *) {
+        flex: 1;
     }
 </style>

@@ -149,6 +149,15 @@
                 <Button variant="outline">View</Button>
             </ButtonGroup>
         </Flex>
+
+        <ButtonGroup>
+            <Button>Button 1</Button>
+            <Button variant="outline">Button 2</Button>
+            <Button variant="outline">Button 3</Button>
+            <Button variant="outline">Button 4</Button>
+            <Button variant="outline">Button 5</Button>
+            <Button variant="outline">Button 6</Button>
+        </ButtonGroup>
     </Stack>
 
     <Stack>
