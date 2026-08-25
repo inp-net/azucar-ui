@@ -36,6 +36,8 @@
         border-radius: var(--corner-radius);
         padding: var(--size-md) var(--size-lg);
         color: var(--color-fg-high);
+        max-width: 100%;
+        min-width: 0;
     }
 
     .frame.is-transparent {

@@ -39,6 +39,8 @@
 		flex-direction:${direction};
 		align-items:${align};
 		justify-content:${justify};
+        max-width: 100%;
+        min-width: 0;
 		${gap ? `gap:var(--size-${gap});` : ''}
 		flex-wrap:${wrap ? 'wrap' : 'nowrap'};
 		${style ?? ''}
