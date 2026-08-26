@@ -12,7 +12,7 @@
         options?: string[];
     };
 
-    let { children, icon, id = 'datalist-list', options = [], class: className, value = $bindable(), style, ...rest }: Props = $props();
+    let { children, icon, id, options = [], class: className, value = $bindable(), style, ...rest }: Props = $props();
 
     const classes = $derived(
         ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
@@ -40,12 +40,12 @@
 
         <input
             type={rest.type ?? 'text'}
-            list={id}
+            list={id ?? ''}
             {...rest}
             bind:value
         />
 
-        {#if options.length > 0}
+        {#if id && options.length > 0}
             <datalist {id}>
                 {#each options as option}
                     <option value={option}>{option}</option>

@@ -221,7 +221,7 @@
 
         <Flex>
             <TextInput name="aaa" placeholder="Jaurès">Name</TextInput>
-            <TextInput icon={SearchIcon} placeholder="Type a" options={['azucar', 'net7']}>Datalist</TextInput>
+            <TextInput icon={SearchIcon} placeholder="Type a" id="mylist" options={['azucar', 'net7']}>Datalist</TextInput>
             <TextInput required>Label</TextInput>
             <TextInput icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled required placeholder="Toulouse">City</TextInput>
