@@ -8,9 +8,11 @@
     type Props = HTMLInputAttributes & {
         icon?: typeof Icon;
         type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
+        id?: string;
+        options?: string[];
     };
 
-    let { children, icon, class: className, value = $bindable(), style, ...rest }: Props = $props();
+    let { children, icon, id = 'datalist-list', options = [], class: className, value = $bindable(), style, ...rest }: Props = $props();
 
     const classes = $derived(
         ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
@@ -36,7 +38,20 @@
             </span>
         {/if}
 
-        <input type={rest.type ?? 'text'} {...rest} bind:value />
+        <input
+            type={rest.type ?? 'text'}
+            list={id}
+            {...rest}
+            bind:value
+        />
+
+        {#if options.length > 0}
+            <datalist {id}>
+                {#each options as option}
+                    <option value={option}>{option}</option>
+                {/each}
+            </datalist>
+        {/if}
     </div>
 </label>
 
@@ -47,14 +62,6 @@
         gap: var(--size-xxs);
     }
 
-    .input-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: var(--gap-icon);
-        color: var(--color-fg-low);
-    }
-
     .text-input-icon {
         display: inline-flex;
         align-items: center;
@@ -63,6 +70,11 @@
     }
 
     .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: var(--gap-icon);
+        color: var(--color-fg-low);
         width: 100%;
         line-height: 1.25;
         font: inherit;
