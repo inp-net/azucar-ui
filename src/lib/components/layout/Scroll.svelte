@@ -60,6 +60,17 @@
         overflow: hidden;
     }
 
+    ::-webkit-scrollbar {
+        width: 9px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        border: transparent;
+    }
+
     .has-fade {
         --mask: linear-gradient(
             to right,
@@ -82,6 +93,7 @@
         min-width: 0;
         scrollbar-width: thin;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
         padding: 2px 10px;
         box-sizing: border-box;
     }
