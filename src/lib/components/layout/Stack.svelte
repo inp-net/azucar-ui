@@ -9,12 +9,14 @@
 
     type Props = HTMLAttributes<HTMLElement> & {
         gap?: Size;
+        padding?: Size;
+        margin?: Size;
         align?: CSS.Properties['alignItems'];
     };
 
-    let { gap = 'md', align = 'stretch', children, ...rest }: Props = $props();
+    let { gap = 'md', padding = 'zero', margin = 'zero', align = 'stretch', children, ...rest }: Props = $props();
 </script>
 
-<Flex direction="column" {gap} {align} {...rest}>
+<Flex direction="column" {gap} {padding} {margin} {align} {...rest}>
     {@render children?.()}
 </Flex>
