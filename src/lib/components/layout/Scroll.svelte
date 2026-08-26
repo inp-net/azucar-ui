@@ -25,7 +25,7 @@
         fade = true,
         fadeSize = 'md',
         gap,
-        align = "stretch",
+        align = 'stretch',
         justify = 'flex-start',
         children,
         style: customStyle,
@@ -33,19 +33,14 @@
     }: Props = $props();
 </script>
 
-
-<div 
-    class="scroll-container"
-    class:has-fade={fade}
-    style:--fade-size={`var(--size-${fadeSize})`}
->
-    <Flex 
-        direction="row" 
-        {padding} 
-        {margin} 
-        {gap} 
-        {align} 
-        {justify} 
+<div class="scroll-container" class:has-fade={fade} style:--fade-size={`var(--size-${fadeSize})`}>
+    <Flex
+        direction="row"
+        {padding}
+        {margin}
+        {gap}
+        {align}
+        {justify}
         wrap={false}
         class="scroll-content"
         style={customStyle}
@@ -107,4 +102,3 @@
         }
     }
 </style>
-
