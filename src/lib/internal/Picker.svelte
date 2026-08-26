@@ -3,6 +3,7 @@
     import Switch from '../components/Switch.svelte';
     import Slider from '../components/Slider.svelte';
     import Stack from '../components/layout/Stack.svelte';
+    import TextInput from '$lib/components/TextInput.svelte';
 
     // --- Picker ---
     // A simple component that allows you to pick a base color and toggle dark mode.
@@ -13,18 +14,21 @@
     let isDarkTheme = $state(false);
     let cornerRadius = $state(0);
 
+    const parseOklch = (color: string) => {
+        const match = color.match(/oklch\(\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*\)/);
+        if (match) {
+            l = parseFloat(match[1]);
+            c = parseFloat(match[2]);
+            h = parseFloat(match[3]);
+        }
+    };
+
     onMount(() => {
         const computedStyle = getComputedStyle(document.documentElement);
         const baseColor = computedStyle.getPropertyValue('--base-color').trim();
 
         if (baseColor) {
-            const match = baseColor.match(/oklch\(\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*\)/);
-
-            if (match) {
-                l = parseFloat(match[1]);
-                c = parseFloat(match[2]);
-                h = parseFloat(match[3]);
-            }
+            parseOklch(baseColor);
         }
 
         const colorScheme = computedStyle.getPropertyValue('color-scheme').trim();
@@ -43,6 +47,14 @@
 </script>
 
 <Stack>
+    <TextInput
+        type="text"
+        value={`oklch(${l} ${c} ${h})`}
+        oninput={(e) => {
+            parseOklch(e.currentTarget.value);
+        }}>Base Color</TextInput
+    >
+
     <Slider
         min={0}
         max={1}

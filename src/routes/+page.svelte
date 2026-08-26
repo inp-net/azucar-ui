@@ -155,8 +155,9 @@
             <h3>Scroll</h3>
             <Scroll>
                 {#each Array(60)}
-                    <div style="width: 30px; height: 30px; background-color: var(--color-bg-solid)">
-                    </div>
+                    <div
+                        style="width: 30px; height: 30px; background-color: var(--color-bg-solid)"
+                    ></div>
                 {/each}
             </Scroll>
         </Stack>
