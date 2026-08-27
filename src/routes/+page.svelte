@@ -267,7 +267,7 @@
             <Badge variant="outline">Outline</Badge>
             <Badge variant="ghost">Ghost</Badge>
             <Badge icon={SearchIcon}>Icon</Badge>
-            <Badge icon={Icon} extent={15}>net7</Badge>
+            <Badge variant="outline" icon={Icon} extent={15}>net7</Badge>
         </Flex>
     </Stack>
 
