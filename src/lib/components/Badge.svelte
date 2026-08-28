@@ -8,13 +8,11 @@
     type Props = HTMLAttributes<HTMLDivElement> & {
         variant?: 'default' | 'outline' | 'ghost';
         icon?: Component;
-        extent?: number;    // increase icon space
-        top?: number;       // adjust icon vertically
     };
 
-    const { variant = 'default', icon, extent = 0, top = 0, class: className, children, ...rest }: Props = $props();
+    const { variant = 'default', icon, class: className, children, ...rest }: Props = $props();
 
-    const iconSize = '1em';
+    const iconSize = '0.9em';
 
     const classes = $derived(['badge', `badge-${variant}`, className].join(' '));
 </script>
@@ -28,8 +26,6 @@
             class="icon-container"
             style={`
                 --icon-size: ${iconSize};
-                --icon-top: ${top}px;
-                --extent: ${extent}px;
             `}
         >
             <IconComponent class="icon" aria-hidden="true" />
@@ -65,13 +61,13 @@
     }
 
     .icon-container {
-        width: calc(var(--icon-size) + var(--extent));
         height: var(--icon-size);
+        width: max-content;
     }
 
     :global(.icon-container > svg) {
         position: relative;
-        top: var(--icon-top);
+        top: -1px;
         width: 100%;
         height: 100%;
     }
