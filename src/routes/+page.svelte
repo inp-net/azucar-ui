@@ -11,6 +11,7 @@
         Switch,
         Table,
         TextInput,
+        Select,
         Slider,
         Skeleton,
         SkeletonText,
@@ -228,6 +229,16 @@
             <TextInput disabled>Label</TextInput>
             <TextInput disabled icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled />
+        </Flex>
+    </Stack>
+
+    <Stack>
+        <h2>Selects</h2>
+
+        <Flex>
+            <Select id='select' options={['azucar', 'net7', 'ui']} />
+            <Select id='new-select' options={['azucar', 'net7', 'ui']}>Select label</Select>
+            <Select id='newnew-select' options={['azucar', 'net7', 'ui']} variant="outline">Select label</Select>
         </Flex>
     </Stack>
 
