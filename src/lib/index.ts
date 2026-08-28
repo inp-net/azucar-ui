@@ -11,6 +11,7 @@ export { default as Badge } from './components/Badge.svelte';
 export { default as Button } from './components/Button.svelte';
 export { default as ButtonGroup } from './components/ButtonGroup.svelte';
 export { default as Frame } from './components/Frame.svelte';
+export { default as Select } from './components/Select.svelte';
 export { default as Slider } from './components/Slider.svelte';
 export { default as Skeleton } from './components/Skeleton.svelte';
 export { default as SkeletonText } from './components/SkeletonText.svelte';
