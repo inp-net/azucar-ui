@@ -7,6 +7,7 @@
         id: string;
         variant?: 'default' | 'outline';
         options?: string[];
+        value?: string;
         disabled?: boolean;
         children?: Snippet;
     };
@@ -15,6 +16,7 @@
         id = '',
         variant = 'default',
         options = [],
+        value = $bindable(),
         disabled = false,
         children,
         ...restProps
@@ -28,6 +30,7 @@
     <div class="select-container select-{variant}" disabled={disabled}>
         <select
             class="select"
+            bind:value={value}
             {id}
             {...restProps}
         >
