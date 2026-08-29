@@ -1,5 +1,6 @@
 <script lang="ts">
     import Picker from '$lib/internal/Picker.svelte';
+    import Icon from '$lib/internal/Icon.svelte';
     import {
         Avatar,
         Badge,
@@ -267,6 +268,8 @@
             <Badge>Default</Badge>
             <Badge variant="outline">Outline</Badge>
             <Badge variant="ghost">Ghost</Badge>
+            <Badge icon={SearchIcon}>Icon</Badge>
+            <Badge variant="outline" icon={Icon}>net7</Badge>
         </Flex>
     </Stack>
 
