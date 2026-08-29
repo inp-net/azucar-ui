@@ -83,16 +83,6 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <!-- <Frame style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow> -->
-    <!--     <Stack> -->
-    <!--         <Flex justify="space-between"> -->
-    <!--             <h3>Settings</h3> -->
-    <!--             <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button> -->
-    <!--         </Flex> -->
-    <!--         <Picker /> -->
-    <!--     </Stack> -->
-    <!-- </Frame> -->
-
     <Details summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
         <Stack>
             <Picker />

@@ -26,18 +26,28 @@
     let unfolded = $state(false);
 
     const arrowSize = "1.1em";
+    const styles = $derived(
+        [rest.style, 'padding: 0;'].filter(Boolean).join(' ')
+    );
 </script>
 
-<Frame {transparent} {shadow} {border} {...rest}>
-    <details open={isUnfolded}>
-        <summary>
+<Frame 
+    {transparent}
+    {shadow}
+    {border}
+    style={styles}
+>
+    <details open={isUnfolded} >
+        <summary style="padding: var(--size-md) var(--size-lg);">
             <Flex gap="sm" align="center">
                 <ChevronDown size={arrowSize} class="arrow" />
                 <p>{summary}</p>
             </Flex>
         </summary>
-        <hr noshade/>
-        {@render children?.()}
+        <div style="padding: var(--size-md) var(--size-lg); padding-top: 0;">
+            <hr noshade/>
+            {@render children?.()}
+        </div>
     </details>
 </Frame>
 
@@ -67,7 +77,7 @@
     }
 
     hr {
-        margin: var(--size-sm) var(--size-xxs) var(--size-md) var(--size-xxs);
+        margin: 0 var(--size-xxs) var(--size-md) var(--size-xxs);
         color: var(--color-fg-high);
         border-color: var(--color-border);
         background-color: var(--color-fg-high);
