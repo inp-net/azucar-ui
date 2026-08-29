@@ -136,15 +136,37 @@
         appearance: none;
     }
 
+    /* .arrow { */
+    /*     position: absolute; */
+    /*     right: 0.75em; */
+    /*     top: 50%; */
+    /*     transform: translateY(-50%); */
+    /*     display: flex; */
+    /*     align-items: center; */
+    /*     justify-content: center; */
+    /*     color: currentColor; */
+    /*     pointer-events: none; */
+    /* } */
+
     .arrow {
         position: absolute;
         right: 0.75em;
         top: 50%;
         transform: translateY(-50%);
+        transform-origin: center;
         display: flex;
         align-items: center;
         justify-content: center;
         color: currentColor;
         pointer-events: none;
+        transition: transform 0.25s ease;
+    }
+
+    .select-container:hover .arrow {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .select:focus ~ .arrow {
+        transform: translateY(-50%) rotate(180deg);
     }
 </style>
