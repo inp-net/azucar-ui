@@ -30,7 +30,7 @@
 
 <Frame {transparent} {shadow} {border} {...rest}>
     <details open={isUnfolded}>
-        <summary onclick={toggle}>
+        <summary>
             <Flex gap="sm" align="center">
                 <ChevronDown size={arrowSize} class="arrow" />
                 <p>{summary}</p>

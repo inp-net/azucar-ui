@@ -175,7 +175,7 @@
         <Stack>
             <h3>Details</h3>
             <Details border={true} shadow={true} summary="This is a Detail">
-                <p>Test</p>
+                <p>Toulouse !</p>
             </Details>
         </Stack>
     </Stack>
