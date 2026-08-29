@@ -5,6 +5,7 @@
         Badge,
         Button,
         ButtonGroup,
+        Details,
         Frame,
         Flex,
         Stack,
@@ -82,15 +83,24 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <Frame style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
+    <!-- <Frame style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow> -->
+    <!--     <Stack> -->
+    <!--         <Flex justify="space-between"> -->
+    <!--             <h3>Settings</h3> -->
+    <!--             <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button> -->
+    <!--         </Flex> -->
+    <!--         <Picker /> -->
+    <!--     </Stack> -->
+    <!-- </Frame> -->
+
+    <Details summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
         <Stack>
-            <Flex justify="space-between">
-                <h3>Settings</h3>
+            <Picker />
+            <Flex justify="space-between" style='margin-left: auto'>
                 <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
             </Flex>
-            <Picker />
         </Stack>
-    </Frame>
+    </Details>
 
     <Stack>
         <h2>Color System</h2>
@@ -160,6 +170,13 @@
                     ></div>
                 {/each}
             </Scroll>
+        </Stack>
+
+        <Stack>
+            <h3>Details</h3>
+            <Details border={true} shadow={true} summary="This is a Detail">
+                <p>Test</p>
+            </Details>
         </Stack>
     </Stack>
 
