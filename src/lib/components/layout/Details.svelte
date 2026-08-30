@@ -35,7 +35,7 @@
     style={styles}
 >
     <details open={isUnfolded} >
-        <summary style="padding: var(--size-md) var(--size-lg);">
+        <summary class="details-header">
             <Flex gap="sm" align="center">
                 <ChevronDown size={arrowSize} class="arrow" />
                 <p>{summary}</p>
@@ -51,6 +51,10 @@
 <style>
     .content {
         padding: 0 var(--size-lg) var(--size-md) var(--size-lg);
+    }
+
+    .details-header {
+        padding: var(--size-md) var(--size-lg);
     }
 
     :global(details .arrow) {
