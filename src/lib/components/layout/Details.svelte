@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { slide } from 'svelte/transition';
     import type { HTMLAttributes } from 'svelte/elements';
     import { ChevronDown } from '@lucide/svelte';
     import Frame from '../Frame.svelte';
@@ -23,8 +22,6 @@
         ...rest
     }: Props = $props();
 
-    let unfolded = $state(false);
-
     const arrowSize = "1.1em";
     const styles = $derived(
         [rest.style, 'padding: 0;'].filter(Boolean).join(' ')
@@ -44,7 +41,7 @@
                 <p>{summary}</p>
             </Flex>
         </summary>
-        <div style="padding: var(--size-md) var(--size-lg); padding-top: 0;">
+        <div class="content">
             <hr noshade/>
             {@render children?.()}
         </div>
@@ -52,20 +49,8 @@
 </Frame>
 
 <style>
-    /* remove official arrow from details */
-    summary {
-        list-style: none;
-        cursor: pointer;
-        
-        /* text style */
-        font-family: Space Grotesk, sans-serif;
-        font-weight: 700;
-    }
-    summary::-webkit-details-marker {
-        display: none;
-    }
-    summary::marker {
-        display: none;
+    .content {
+        padding: 0 var(--size-lg) var(--size-md) var(--size-lg);
     }
 
     :global(details .arrow) {
