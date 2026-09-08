@@ -14,7 +14,7 @@
 
     let {
         id = '',
-        variant = 'default',
+        variant = 'outline',
         options = [],
         value = $bindable(),
         disabled = false,
@@ -27,10 +27,11 @@
     {#if children}
         {@render children()}
     {/if}
-    <div class="select-container select-{variant}" disabled={disabled}>
+    <div class="select-container select-{variant}" >
         <select
             class="select"
             bind:value={value}
+            disabled={disabled}
             {id}
             {...restProps}
         >
@@ -53,9 +54,40 @@
 
     .select-container {
         position: relative;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         border-radius: var(--corner-radius);
+        width: 100%;
+    }
+
+    .select {
+        --active-scale-factor: 0.98;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        
+        font: inherit;
+        font-weight: 800;
+        line-height: 1.25;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        border: none;
+        border-radius: var(--corner-radius);
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+        user-select: none;
+        padding: var(--padding-y-icon) calc(var(--size-md) * 5) var(--padding-y-icon) var(--size-md);
+        margin: 0;
+        text-align: left;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     .select-default {
@@ -108,65 +140,15 @@
         box-shadow: var(--shadow-surface);
     }
 
-    .select {
-        --active-scale-factor: 0.98;
-
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font: inherit;
-        font-weight: 800;
-        line-height: 1.25;
-        text-align: center;
-        text-decoration: none;
-        white-space: nowrap;
-        border: none;
-        border-radius: var(--corner-radius);
-        background: transparent;
-        color: inherit;
-        cursor: pointer;
-        user-select: none;
-        padding: var(--padding-y-icon) calc(var(--size-md) * 2) var(--padding-y-icon) var(--size-md);
-        margin: 0 var(--size-xxs);
-
-        /* Remove default browser arrow */
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    /* .arrow { */
-    /*     position: absolute; */
-    /*     right: 0.75em; */
-    /*     top: 50%; */
-    /*     transform: translateY(-50%); */
-    /*     display: flex; */
-    /*     align-items: center; */
-    /*     justify-content: center; */
-    /*     color: currentColor; */
-    /*     pointer-events: none; */
-    /* } */
-
     .arrow {
         position: absolute;
         right: 0.75em;
         top: 50%;
         transform: translateY(-50%);
-        transform-origin: center;
         display: flex;
         align-items: center;
         justify-content: center;
         color: currentColor;
         pointer-events: none;
-        transition: transform 0.25s ease;
-    }
-
-    .select-container:hover .arrow {
-        transform: translateY(-50%) rotate(180deg);
-    }
-
-    .select:focus ~ .arrow {
-        transform: translateY(-50%) rotate(180deg);
     }
 </style>
