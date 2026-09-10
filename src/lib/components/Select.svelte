@@ -3,6 +3,10 @@
     import type { Snippet } from 'svelte';
     import { ChevronDown } from '@lucide/svelte';
 
+    // --- Select ---
+    // Select is an Input where you choose between a selection.
+    // Style follow the Button component
+
     type Props = HTMLSelectAttributes & {
         id: string;
         variant?: 'default' | 'outline';
@@ -25,7 +29,13 @@
 
 <label class="select-label" for={id}>
     {#if children}
-        {@render children()}
+        <span>
+            {@render children?.()}
+            {#if restProps.required}
+                <!-- The little red star indicating required field -->
+                <span class="required-star" aria-hidden="true">*</span>
+            {/if}
+        </span>
     {/if}
     <div class="select-container select-{variant}" >
         <select
@@ -63,31 +73,14 @@
     .select {
         --active-scale-factor: 0.98;
 
+        font-weight: 600;
+        padding: var(--padding-y-icon) calc(var(--size-md) * 5) var(--padding-y-icon) var(--size-md);
+
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        
-        font: inherit;
-        font-weight: 800;
-        line-height: 1.25;
-        text-align: center;
-        text-decoration: none;
-        white-space: nowrap;
-        border: none;
-        border-radius: var(--corner-radius);
-        background: transparent;
-        color: inherit;
-        cursor: pointer;
-        user-select: none;
-        padding: var(--padding-y-icon) calc(var(--size-md) * 5) var(--padding-y-icon) var(--size-md);
-        margin: 0;
-        text-align: left;
-
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
     }
 
     .select-default {
@@ -150,6 +143,10 @@
         justify-content: center;
         color: currentColor;
         pointer-events: none;
+    }
+
+    .required-star {
+        color: var(--color-danger);
     }
 
     @media(max-width: 600px) {
