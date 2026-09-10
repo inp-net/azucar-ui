@@ -237,7 +237,7 @@
 
         <Flex align="end">
             <Select id='select' options={['azucar', 'net7', 'ui']} />
-            <Select id='new-select' options={['easy', 'medium', 'hard']}>Select label</Select>
+            <Select id='new-select' required options={['easy', 'medium', 'hard']}>Select label</Select>
             <Select id='newnew-select' options={['net7', 'inp-net']} variant="outline">Select label</Select>
         </Flex>
     </Stack>
