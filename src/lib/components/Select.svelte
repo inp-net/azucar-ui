@@ -151,4 +151,10 @@
         color: currentColor;
         pointer-events: none;
     }
+
+    @media(max-width: 600px) {
+        .select-label {
+            flex-grow: 1;
+        }
+    }
 </style>
