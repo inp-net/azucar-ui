@@ -12,7 +12,16 @@
         options?: string[];
     };
 
-    let { children, icon, id, options = [], class: className, value = $bindable(), style, ...rest }: Props = $props();
+    let {
+        children,
+        icon,
+        id,
+        options = [],
+        class: className,
+        value = $bindable(),
+        style,
+        ...rest
+    }: Props = $props();
 
     const classes = $derived(
         ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
@@ -38,12 +47,7 @@
             </span>
         {/if}
 
-        <input
-            type={rest.type ?? 'text'}
-            list={id ?? ''}
-            {...rest}
-            bind:value
-        />
+        <input type={rest.type ?? 'text'} list={id ?? ''} {...rest} bind:value />
 
         {#if id && options.length > 0}
             <datalist {id}>

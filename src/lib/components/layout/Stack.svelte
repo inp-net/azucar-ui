@@ -14,7 +14,14 @@
         align?: CSS.Properties['alignItems'];
     };
 
-    let { gap = 'md', padding = 'zero', margin = 'zero', align = 'stretch', children, ...rest }: Props = $props();
+    let {
+        gap = 'md',
+        padding = 'zero',
+        margin = 'zero',
+        align = 'stretch',
+        children,
+        ...rest
+    }: Props = $props();
 </script>
 
 <Flex direction="column" {gap} {padding} {margin} {align} {...rest}>

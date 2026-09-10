@@ -21,7 +21,7 @@
     {#if icon}
         <!-- making a container fixed size reduce overhead, no need to add size
              parameters to svg -->
-        {@const IconComponent = icon} 
+        {@const IconComponent = icon}
         <div
             class="icon-container"
             style={`
