@@ -6,6 +6,7 @@
 
     type Props = HTMLAttributes<HTMLElement> & {
         summary?: string;
+        framed?: boolean;
         transparent?: boolean;
         shadow?: boolean;
         border?: boolean;
@@ -14,6 +15,7 @@
 
     let {
         summary = '',
+        framed = false,
         transparent = false,
         shadow = false,
         border = false,
@@ -23,25 +25,30 @@
     }: Props = $props();
 
     const arrowSize = "1.1em";
+    const resetStyle = $derived(!framed ? 'background-color: transparent; border-color: none; box-shadow: none;' : '');
     const styles = $derived(
-        [rest.style, 'padding: 0;'].filter(Boolean).join(' ')
+        [rest.style, resetStyle, 'padding: 0;'].filter(Boolean).join(' ')
     );
 </script>
 
 <Frame 
-    {transparent}
-    {shadow}
-    {border}
+    transparent={framed && transparent}
+    shadow={framed && shadow}
+    border={framed && border}
     style={styles}
 >
     <details open={isUnfolded} >
-        <summary class="details-header">
+        <summary style={`
+            ${framed ? 'padding: var(--size-md) var(--size-lg);' : 'padding: var(--size-md) 0;'}
+        `}>
             <Flex gap="sm" align="center">
                 <ChevronDown size={arrowSize} class="arrow" />
                 <p>{summary}</p>
             </Flex>
         </summary>
-        <div class="content">
+        <div class="content" style={`
+            ${framed ? 'padding: 0 var(--size-lg) var(--size-md) var(--size-lg);' : 'padding: 0;'}
+        `}>
             <hr noshade/>
             {@render children?.()}
         </div>
@@ -51,10 +58,6 @@
 <style>
     .content {
         padding: 0 var(--size-lg) var(--size-md) var(--size-lg);
-    }
-
-    .details-header {
-        padding: var(--size-md) var(--size-lg);
     }
 
     :global(details .arrow) {

@@ -83,7 +83,7 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <Details summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
+    <Details framed={true} summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
         <Stack>
             <Picker />
             <Flex justify="space-between" style='margin-left: auto'>
@@ -164,7 +164,10 @@
 
         <Stack>
             <h3>Details</h3>
-            <Details border={true} shadow={true} summary="This is a Detail">
+            <Details summary="This is a Detail">
+                <p>Toulouse !</p>
+            </Details>
+            <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
                 <p>Toulouse !</p>
             </Details>
         </Stack>
