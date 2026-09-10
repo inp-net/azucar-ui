@@ -117,3 +117,13 @@ _🚧 = Design done, implementation in progress._
 _⌛ = Design in progress._
 
 _You can easily create custom components that fits with Azucar UI using the design tokens and the color palette system._
+
+## Contributing
+
+Setup the project and run the demo page with:
+
+```bash
+pnpm install
+pnpm lefthook install # Install git hooks
+pnpm dev
+```

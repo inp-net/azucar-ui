@@ -1,0 +1,5 @@
+pre-commit:
+    jobs:
+        - name: prettier
+          run: npx prettier --ignore-unknown --write '{staged_files}'
+          stage_fixed: true
