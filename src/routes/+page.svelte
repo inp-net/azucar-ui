@@ -6,6 +6,7 @@
         Badge,
         Button,
         ButtonGroup,
+        Details,
         Frame,
         Flex,
         Stack,
@@ -83,15 +84,14 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <Frame style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
+    <Details framed={true} summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
         <Stack>
-            <Flex justify="space-between">
-                <h3>Settings</h3>
+            <Picker />
+            <Flex justify="space-between" style='margin-left: auto'>
                 <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
             </Flex>
-            <Picker />
         </Stack>
-    </Frame>
+    </Details>
 
     <Stack>
         <h2>Color System</h2>
@@ -161,6 +161,28 @@
                     ></div>
                 {/each}
             </Scroll>
+        </Stack>
+
+        <Stack>
+            <h3>Details</h3>
+            <Details summary="This is a Detail">
+                <p>Toulouse !</p>
+            </Details>
+            <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
+                <p>net7</p>
+            </Details>
+            <Details framed={true}>
+                {#snippet summarySnippet()}
+                    <Flex align="center" justify="space-between" style="flex-grow: 1">
+                        <Avatar size='lg' alt='Avatar' />
+                        <span>
+                            <p>A customed summary</p>
+                            <p style='margin-left: auto;'>10/09/2026</p>
+                        </span>
+                    </Flex>
+                {/snippet}
+                <p>Hello there !</p>
+            </Details>
         </Stack>
     </Stack>
 
