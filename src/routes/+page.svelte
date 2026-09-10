@@ -168,7 +168,19 @@
                 <p>Toulouse !</p>
             </Details>
             <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
-                <p>Toulouse !</p>
+                <p>net7</p>
+            </Details>
+            <Details framed={true}>
+                {#snippet summarySnippet()}
+                    <Flex align="center" justify="space-between" style="flex-grow: 1">
+                        <Avatar size='lg' alt='Avatar' />
+                        <span>
+                            <p>A customed summary</p>
+                            <p style='margin-left: auto;'>10/09/2026</p>
+                        </span>
+                    </Flex>
+                {/snippet}
+                <p>Hello there !</p>
             </Details>
         </Stack>
     </Stack>

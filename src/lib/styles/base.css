@@ -123,8 +123,6 @@ div {
 summary {
     list-style: none;
     cursor: pointer;
-    font-family: Space Grotesk, sans-serif;
-    font-weight: 700;
 }
 summary::-webkit-details-marker {
     display: none;

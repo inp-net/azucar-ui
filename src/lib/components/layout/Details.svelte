@@ -1,11 +1,13 @@
 <script lang="ts">
     import type { HTMLAttributes } from 'svelte/elements';
     import { ChevronDown } from '@lucide/svelte';
+    import type { Snippet } from 'svelte';
     import Frame from '../Frame.svelte';
     import Flex from './Flex.svelte';
 
     type Props = HTMLAttributes<HTMLElement> & {
         summary?: string;
+        summarySnippet?: Snippet;
         framed?: boolean;
         transparent?: boolean;
         shadow?: boolean;
@@ -15,6 +17,7 @@
 
     let {
         summary = '',
+        summarySnippet,
         framed = false,
         transparent = false,
         shadow = false,
@@ -41,9 +44,13 @@
         <summary style={`
             ${framed ? 'padding: var(--size-md) var(--size-lg);' : 'padding: var(--size-md) 0;'}
         `}>
-            <Flex gap="sm" align="center">
+            <Flex gap="sm" align="center" wrap={false}>
                 <ChevronDown size={arrowSize} class="arrow" />
-                <p>{summary}</p>
+                {#if !summarySnippet}
+                    <p class="summary-text">{summary}</p>
+                {:else}
+                    {@render summarySnippet()}
+                {/if}
             </Flex>
         </summary>
         <div class="content" style={`
@@ -74,6 +81,11 @@
         border-color: var(--color-border);
         background-color: var(--color-fg-high);
         border-bottom: 0;
+    }
+
+    .summary-text {
+        font-family: Space Grotesk, sans-serif;
+        font-weight: 700;
     }
 
 </style>
