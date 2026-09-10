@@ -6,6 +6,7 @@
         Badge,
         Button,
         ButtonGroup,
+        Dropdown,
         Frame,
         Flex,
         Stack,
@@ -235,6 +236,22 @@
             <TextInput disabled icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled />
         </Flex>
+    </Stack>
+
+    <Stack>
+        <h2>Dropdown</h2>
+
+        <Dropdown menu={['test', 'une action']} align='right' eventAction={(s: string) => console.log(s)}>
+            <Button>
+                Test
+            </Button>
+        </Dropdown>
+
+        <Dropdown menu={['test', 'une action']} align='center' eventAction={(s: string) => console.log(s)}>
+            <Button>
+                Test
+            </Button>
+        </Dropdown>
     </Stack>
 
     <Stack>
