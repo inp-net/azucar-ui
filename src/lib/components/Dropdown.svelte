@@ -59,25 +59,7 @@
         position-anchor: --anchor-${id};
     `}
 >
-    <svg
-        class='arrow'
-        width="12mm"
-        height="13.63mm"
-        viewBox="0 0 12 13.63"
-    >
-        <g transform="translate(-64.000001, -98.373518)">
-            <path
-                style="fill: var(--color-border);"
-                d="M 70.000003,98.373512 64.000001,110 h 12.000001 z"
-            />
-            <path
-                style="fill: var(--color-bg-subtle);"
-                d="M 70.000002,101 65,111 v 2 H 75.000002 L 75,110 Z"
-            />
-        </g>
-    </svg>
-
-    <Frame border={true} style="padding: 1px; border-radius: calc(var(--corner-radius) / 2);">
+    <Frame border={true} transparent={true} style="padding: 1px; border-radius: calc(var(--corner-radius) / 2);">
         <Stack gap='zero'>
             {#each menu as item}
                 <button class='dropdown-item' onclick={() => handleClick(item)}>
@@ -99,19 +81,12 @@
         width: fit-content;
         min-width: 5vw;
         margin: 0;
+        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
     }
 
     .frame:popover-open {
         display: flex;
         flex-direction: column;
-    }
-
-    .arrow {
-        position: relative;
-        top: 2px;
-        width: var(--size-lg);
-        height: var(--size-sm);
-        margin: 0 var(--size-sm);
     }
 
     .dropdown-item {
