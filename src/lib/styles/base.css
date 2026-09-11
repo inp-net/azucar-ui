@@ -135,6 +135,17 @@ button {
     -webkit-appearance: none;
 }
 
+summary {
+    list-style: none;
+    cursor: pointer;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::marker {
+    display: none;
+}
+
 /* Utility classes */
 .success {
     --base-color: var(--color-success);

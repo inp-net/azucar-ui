@@ -1,5 +1,6 @@
 // Layout components
 export { default as Box } from './components/layout/Box.svelte';
+export { default as Details } from './components/layout/Details.svelte';
 export { default as Flex } from './components/layout/Flex.svelte';
 export { default as Stack } from './components/layout/Stack.svelte';
 export { default as Scroll } from './components/layout/Scroll.svelte';

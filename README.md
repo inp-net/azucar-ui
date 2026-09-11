@@ -97,6 +97,7 @@ Components are self-documented, here is a list of the ones currently available:
     - [Box](./src/lib/components/layout/Box.svelte)
     - [Flex](./src/lib/components/layout/Flex.svelte)
     - [Stack](./src/lib/components/layout/Stack.svelte)
+    - [Details](./src/lib/components/layout/Details.svelte)
 - [Avatar](./src/lib/components/Avatar.svelte)
 - [Badge](./src/lib/components/Badge.svelte)
 - [Button](./src/lib/components/Button.svelte)
