@@ -85,10 +85,17 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <Details framed={true} summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
+    <Details
+        framed={true}
+        summary="Settings"
+        style="position: sticky; top: var(--size-lg); z-index: 10;"
+        transparent
+        border
+        shadow
+    >
         <Stack>
             <Picker />
-            <Flex justify="space-between" style='margin-left: auto'>
+            <Flex justify="space-between" style="margin-left: auto">
                 <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
             </Flex>
         </Stack>
@@ -175,10 +182,10 @@
             <Details framed={true}>
                 {#snippet summarySnippet()}
                     <Flex align="center" justify="space-between" style="flex-grow: 1">
-                        <Avatar size='lg' alt='Avatar' />
+                        <Avatar size="lg" alt="Avatar" />
                         <span>
                             <p>A customed summary</p>
-                            <p style='margin-left: auto;'>10/09/2026</p>
+                            <p style="margin-left: auto;">10/09/2026</p>
                         </span>
                     </Flex>
                 {/snippet}
@@ -264,9 +271,14 @@
         <h2>Selects</h2>
 
         <Flex align="end">
-            <Select id='select' options={['azucar', 'net7', 'ui']} />
-            <Select id='new-select' required options={['easy', 'medium', 'hard']}>Select label</Select>
-            <Select id='newnew-select' options={['net7', 'inp-net']} variant="outline">Select label</Select>
+            <Select id="select" options={['azucar', 'net7', 'ui']} />
+            <Select id="select" options={['azucar', 'net7', 'ui']} variant="default" />
+            <Select id="new-select" required options={['easy', 'medium', 'hard']}
+                >Select label</Select
+            >
+            <Select id="newnew-select" options={['net7', 'inp-net']} variant="outline"
+                >Select label</Select
+            >
         </Flex>
     </Stack>
 

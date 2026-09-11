@@ -8,7 +8,6 @@
     // Style follow the Button component
 
     type Props = HTMLSelectAttributes & {
-        id: string;
         variant?: 'default' | 'outline';
         options?: string[];
         value?: string;
@@ -18,10 +17,11 @@
 
     let {
         id = '',
-        variant = 'outline',
+        variant = 'default',
         options = [],
         value = $bindable(),
         disabled = false,
+        required,
         children,
         ...restProps
     }: Props = $props();
@@ -31,20 +31,14 @@
     {#if children}
         <span>
             {@render children?.()}
-            {#if restProps.required}
+            {#if required}
                 <!-- The little red star indicating required field -->
                 <span class="required-star" aria-hidden="true">*</span>
             {/if}
         </span>
     {/if}
-    <div class="select-container select-{variant}" >
-        <select
-            class="select"
-            bind:value={value}
-            disabled={disabled}
-            {id}
-            {...restProps}
-        >
+    <div class="select-container select-{variant}">
+        <select class="select" bind:value {disabled} {required} {id} {...restProps}>
             {#each options as option}
                 <option value={option}>{option}</option>
             {/each}
@@ -71,13 +65,9 @@
     }
 
     .select {
-        --active-scale-factor: 0.98;
-
-        font-weight: 600;
-        padding: var(--padding-y-icon) calc(var(--size-md) * 5) var(--padding-y-icon) var(--size-md);
-
+        padding: var(--padding-y-icon) var(--size-xl) var(--padding-y-icon) var(--size-md);
         position: relative;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -101,13 +91,6 @@
         );
     }
 
-    .btn-default:disabled {
-        --base-color: var(--color-neutral);
-        color: var(--color-border-subtle);
-        background: var(--color-bg);
-        cursor: not-allowed;
-    }
-
     .select-outline {
         color: var(--color-fg-low);
         background-color: var(--color-bg);
@@ -126,11 +109,6 @@
         box-shadow:
             0 0 0 1px var(--color-border-focus) inset,
             var(--shadow-surface);
-        scale: var(--active-scale-factor);
-    }
-
-    .select-outline:focus-visible:not(:disabled) {
-        box-shadow: var(--shadow-surface);
     }
 
     .arrow {
@@ -147,11 +125,5 @@
 
     .required-star {
         color: var(--color-danger);
-    }
-
-    @media(max-width: 600px) {
-        .select-label {
-            flex-grow: 1;
-        }
     }
 </style>
