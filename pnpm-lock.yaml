@@ -17,6 +17,9 @@ importers:
       csstype:
         specifier: ^3.2.3
         version: 3.2.3
+      lefthook:
+        specifier: ^2.1.12
+        version: 2.1.12
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^7.0.1

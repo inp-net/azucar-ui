@@ -64,6 +64,8 @@
         };
         copyToClipboard(JSON.stringify(settings, null, 2));
     };
+
+    let dropdownOutput: string = $state("");
 </script>
 
 {#snippet colorFrameWithTooltip(color: string)}
@@ -241,17 +243,19 @@
     <Stack>
         <h2>Dropdown</h2>
 
-        <Dropdown menu={['test', 'une action']} align='right' eventAction={(s: string) => console.log(s)}>
-            <Button>
-                Test
-            </Button>
-        </Dropdown>
+        <p>Actions output : <b>{dropdownOutput}</b></p>
 
-        <Dropdown menu={['test', 'une action']} align='center' eventAction={(s: string) => console.log(s)}>
-            <Button>
-                Test
-            </Button>
-        </Dropdown>
+        <Flex gap="xxl" align="center">
+            <Dropdown id='menu1' menu={['Create file', 'Create folder']} align='center' eventAction={(s: string) => dropdownOutput = s}>
+                <Button variant='ghost' icon={SearchIcon} popovertarget='menu1' />
+            </Dropdown>
+            <Dropdown id='menu2' menu={['Profile', 'Settings']} align='left' eventAction={(s: string) => dropdownOutput = s}>
+                <Button variant='ghost' icon={SearchIcon} popovertarget='menu2'>Left Align Dropdown</Button>
+            </Dropdown>
+            <Dropdown id='menu3' menu={['New item', 'New section']} align='right' eventAction={(s: string) => dropdownOutput = s}>
+                <Button variant='ghost' icon={SearchIcon} popovertarget='menu3'>Right Align Dropdown</Button>
+            </Dropdown>
+        </Flex>
     </Stack>
 
     <Stack>
