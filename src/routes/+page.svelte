@@ -222,7 +222,9 @@
 
         <Flex>
             <TextInput name="aaa" placeholder="Jaurès">Name</TextInput>
-            <TextInput icon={SearchIcon} placeholder="Type a" options={['azucar', 'net7']}>Datalist</TextInput>
+            <TextInput icon={SearchIcon} placeholder="Type a" options={['azucar', 'net7']}
+                >Datalist</TextInput
+            >
             <TextInput required>Label</TextInput>
             <TextInput icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled required placeholder="Toulouse">City</TextInput>
@@ -236,9 +238,14 @@
         <h2>Selects</h2>
 
         <Flex align="end">
-            <Select id='select' options={['azucar', 'net7', 'ui']} />
-            <Select id='new-select' required options={['easy', 'medium', 'hard']}>Select label</Select>
-            <Select id='newnew-select' options={['net7', 'inp-net']} variant="outline">Select label</Select>
+            <Select id="select" options={['azucar', 'net7', 'ui']} />
+            <Select id="select" options={['azucar', 'net7', 'ui']} variant="default" />
+            <Select id="new-select" required options={['easy', 'medium', 'hard']}
+                >Select label</Select
+            >
+            <Select id="newnew-select" options={['net7', 'inp-net']} variant="outline"
+                >Select label</Select
+            >
         </Flex>
     </Stack>
 
