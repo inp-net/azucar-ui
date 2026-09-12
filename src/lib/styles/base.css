@@ -131,6 +131,13 @@ summary::marker {
     display: none;
 }
 
+dialog {
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--corner-radius);
+    background: transparent;
+}
 
 /* Utility classes */
 .success {

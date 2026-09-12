@@ -33,6 +33,7 @@
         CopyIcon
     } from '@lucide/svelte';
     import Tooltip from '$lib/components/Tooltip.svelte';
+    import Dialog from '$lib/components/layout/Dialog.svelte';
 
     const scales = [
         'color-bg-app',
@@ -84,10 +85,17 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <Details framed={true} summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
+    <Details
+        framed={true}
+        summary="Settings"
+        style="position: sticky; top: var(--size-lg); z-index: 10;"
+        transparent
+        border
+        shadow
+    >
         <Stack>
             <Picker />
-            <Flex justify="space-between" style='margin-left: auto'>
+            <Flex justify="space-between" style="margin-left: auto">
                 <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
             </Flex>
         </Stack>
@@ -153,6 +161,35 @@
         <h2>Layouts</h2>
 
         <Stack>
+            <h2>Frames</h2>
+
+            <Flex>
+                <Frame>
+                    <p>This is a frame.</p>
+                </Frame>
+                <Frame shadow>
+                    <p>This is a frame with a shadow.</p>
+                </Frame>
+
+                <Frame border>
+                    <p>This is a frame with a border.</p>
+                </Frame>
+
+                <Frame transparent>
+                    <p>This is a semi-transparent frame.</p>
+                </Frame>
+
+                <Frame transparent border shadow>
+                    <p>This is a semi-transparent frame with a border and a shadow.</p>
+                </Frame>
+
+                <Frame class="neutral">
+                    <p>This is a neutral frame.</p>
+                </Frame>
+            </Flex>
+        </Stack>
+
+        <Stack>
             <h3>Scroll</h3>
             <Scroll>
                 {#each Array(60)}
@@ -174,15 +211,27 @@
             <Details framed={true}>
                 {#snippet summarySnippet()}
                     <Flex align="center" justify="space-between" style="flex-grow: 1">
-                        <Avatar size='lg' alt='Avatar' />
+                        <Avatar size="lg" alt="Avatar" />
                         <span>
                             <p>A customed summary</p>
-                            <p style='margin-left: auto;'>10/09/2026</p>
+                            <p style="margin-left: auto;">10/09/2026</p>
                         </span>
                     </Flex>
                 {/snippet}
                 <p>Hello there !</p>
             </Details>
+        </Stack>
+
+        <Stack>
+            <h3>Dialog</h3>
+
+            <Button command="show-modal" commandfor="my-dialog">Ouvrir</Button>
+            <Dialog id="my-dialog">
+                <h3>Confirmation</h3>
+                <p>Hello !</p>
+                <Button command="close" commandfor="my-dialog">Oui</Button>
+                <Button command="close" commandfor="my-dialog">Fermer</Button>
+            </Dialog>
         </Stack>
     </Stack>
 
@@ -256,35 +305,6 @@
             <TextInput disabled>Label</TextInput>
             <TextInput disabled icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled />
-        </Flex>
-    </Stack>
-
-    <Stack>
-        <h2>Frames</h2>
-
-        <Flex>
-            <Frame>
-                <p>This is a frame.</p>
-            </Frame>
-            <Frame shadow={true}>
-                <p>This is a frame with a shadow.</p>
-            </Frame>
-
-            <Frame border={true}>
-                <p>This is a frame with a border.</p>
-            </Frame>
-
-            <Frame transparent={true}>
-                <p>This is a semi-transparent frame.</p>
-            </Frame>
-
-            <Frame transparent={true} border={true} shadow={true}>
-                <p>This is a semi-transparent frame with a border and a shadow.</p>
-            </Frame>
-
-            <Frame class="neutral">
-                <p>This is a neutral frame.</p>
-            </Frame>
         </Flex>
     </Stack>
 
