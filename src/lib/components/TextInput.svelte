@@ -43,7 +43,7 @@
         {#if icon}
             {@const Icon = icon}
             <span class="text-input-icon">
-                <Icon size="1rem" aria-hidden="true" />
+                <Icon size="1em" aria-hidden="true" />
             </span>
         {/if}
 

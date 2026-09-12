@@ -31,7 +31,8 @@
         CircleArrowRightIcon,
         CircleArrowDownIcon,
         CircleArrowUpIcon,
-        CopyIcon
+        CopyIcon,
+        SquareArrowOutUpRightIcon
     } from '@lucide/svelte';
     import Tooltip from '$lib/components/Tooltip.svelte';
     import Dialog from '$lib/components/layout/Dialog.svelte';
@@ -87,7 +88,7 @@
     </Stack>
 
     <Details
-        framed={true}
+        framed
         summary="Settings"
         style="position: sticky; top: var(--size-lg); z-index: 10;"
         transparent
@@ -174,10 +175,10 @@
         <Details summary="This is a Detail">
             <p>Toulouse !</p>
         </Details>
-        <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
+        <Details framed border shadow summary="This is a Framed Detail">
             <p>net7</p>
         </Details>
-        <Details framed={true}>
+        <Details framed>
             {#snippet summarySnippet()}
                 <Flex align="center" justify="space-between" style="flex-grow: 1">
                     <Avatar size="lg" alt="Avatar" />
@@ -189,6 +190,34 @@
             {/snippet}
             <p>Hello there !</p>
         </Details>
+    </Stack>
+
+    <Stack>
+        <h2>Dialogs</h2>
+        <Flex>
+            <Button command="show-modal" commandfor="my-dialog" icon={SquareArrowOutUpRightIcon}
+                >Open dialog</Button
+            >
+            <Dialog id="my-dialog">
+                <Stack gap="md">
+                    <Flex justify="space-between">
+                        <h3>Hello</h3>
+                        <Button
+                            command="close"
+                            commandfor="my-dialog"
+                            icon={XIcon}
+                            variant="ghost"
+                        />
+                    </Flex>
+                    <p>This is a nice dialog.</p>
+
+                    <Flex wrap={false}>
+                        <Button variant="outline">Cancel</Button>
+                        <Button class="danger">Delete</Button>
+                    </Flex>
+                </Stack>
+            </Dialog>
+        </Flex>
     </Stack>
 
     <Stack>
@@ -284,19 +313,19 @@
             <Frame>
                 <p>This is a frame.</p>
             </Frame>
-            <Frame shadow={true}>
+            <Frame shadow>
                 <p>This is a frame with a shadow.</p>
             </Frame>
 
-            <Frame border={true}>
+            <Frame border>
                 <p>This is a frame with a border.</p>
             </Frame>
 
-            <Frame transparent={true}>
+            <Frame transparent>
                 <p>This is a semi-transparent frame.</p>
             </Frame>
 
-            <Frame transparent={true} border={true} shadow={true}>
+            <Frame transparent border shadow>
                 <p>This is a semi-transparent frame with a border and a shadow.</p>
             </Frame>
 

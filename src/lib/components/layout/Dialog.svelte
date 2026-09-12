@@ -8,14 +8,13 @@
 
     type Props = HTMLDialogAttributes & {
         children: Snippet;
-        blocking?: boolean;
     };
 
-    let { children, blocking = false, ...rest }: Props = $props();
+    let { children, ...rest }: Props = $props();
 </script>
 
 <dialog {...rest}>
-    <Frame shadow transparent>
+    <Frame shadow>
         {@render children?.()}
     </Frame>
 </dialog>
@@ -26,5 +25,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    dialog::backdrop {
+        background-color: color-mix(in oklch, var(--color-bg-subtle) 75%, transparent);
+        backdrop-filter: blur(var(--size-xxs));
     }
 </style>
