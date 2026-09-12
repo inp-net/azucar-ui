@@ -1,4 +1,5 @@
 <script lang="ts">
+    import RequiredStar from '$lib/internal/RequiredStar.svelte';
     import type { Icon } from '@lucide/svelte';
     import type { HTMLInputAttributes } from 'svelte/elements';
 
@@ -28,13 +29,12 @@
     );
 </script>
 
-<label class={classes} {style}>
+<label class={classes} {style} for={id}>
     {#if children}
         <span class="label">
             {@render children?.()}
             {#if rest.required}
-                <!-- The little red star indicating required field -->
-                <span class="required-star" aria-hidden="true">*</span>
+                <RequiredStar />
             {/if}
         </span>
     {/if}
@@ -70,7 +70,7 @@
         display: inline-flex;
         align-items: center;
         pointer-events: none;
-        color: var(--color-border-subtle);
+        color: var(--color-border);
     }
 
     .input-wrapper {
@@ -94,10 +94,6 @@
         width: 100%;
     }
 
-    .required-star {
-        color: var(--color-danger);
-    }
-
     .text-input-has-icon .input-wrapper {
         padding-left: var(--padding-x-icon);
         padding-right: var(--size-sm);
@@ -115,9 +111,17 @@
         color: var(--color-border-focus);
     }
 
-    .input-wrapper:has(input:disabled) {
+    .text-input:has(input:disabled) {
         --base-color: var(--color-neutral);
+        color: var(--color-border-subtle);
         cursor: not-allowed;
+    }
+
+    .input-wrapper:has(input:disabled) {
         box-shadow: inset 0 0 0 1px var(--color-border-subtle);
+    }
+
+    input:disabled {
+        color: var(--color-border-subtle);
     }
 </style>

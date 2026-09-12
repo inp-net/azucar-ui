@@ -103,6 +103,7 @@ Components are self-documented, here is a list of the ones currently available:
 - [Button](./src/lib/components/Button.svelte)
 - [Frame](./src/lib/components/Frame.svelte)
 - [Button Group](./src/lib/components/ButtonGroup.svelte)
+- [Select](./src/lib/components/Select.svelte)
 - [Slider](./src/lib/components/Slider.svelte)
 - [Skeleton](./src/lib/components/Skeleton.svelte)
 - [SkeletonText](./src/lib/components/SkeletonText.svelte)

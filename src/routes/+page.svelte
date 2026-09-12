@@ -13,6 +13,7 @@
         Switch,
         Table,
         TextInput,
+        Select,
         Slider,
         Skeleton,
         SkeletonText,
@@ -84,10 +85,17 @@
         <p>The design system that makes your app sweet.</p>
     </Stack>
 
-    <Details framed={true} summary="Settings" style="position: sticky; top: var(--size-lg); z-index: 10;" transparent border shadow>
+    <Details
+        framed={true}
+        summary="Settings"
+        style="position: sticky; top: var(--size-lg); z-index: 10;"
+        transparent
+        border
+        shadow
+    >
         <Stack>
             <Picker />
-            <Flex justify="space-between" style='margin-left: auto'>
+            <Flex justify="space-between" style="margin-left: auto">
                 <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
             </Flex>
         </Stack>
@@ -150,40 +158,36 @@
     </Stack>
 
     <Stack>
-        <h2>Layouts</h2>
+        <h2>Scroll</h2>
+        <Scroll>
+            {#each Array(60)}
+                <div
+                    style="width: 30px; height: 30px; background-color: var(--color-bg-solid)"
+                ></div>
+            {/each}
+        </Scroll>
+    </Stack>
 
-        <Stack>
-            <h3>Scroll</h3>
-            <Scroll>
-                {#each Array(60)}
-                    <div
-                        style="width: 30px; height: 30px; background-color: var(--color-bg-solid)"
-                    ></div>
-                {/each}
-            </Scroll>
-        </Stack>
-
-        <Stack>
-            <h3>Details</h3>
-            <Details summary="This is a Detail">
-                <p>Toulouse !</p>
-            </Details>
-            <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
-                <p>net7</p>
-            </Details>
-            <Details framed={true}>
-                {#snippet summarySnippet()}
-                    <Flex align="center" justify="space-between" style="flex-grow: 1">
-                        <Avatar size='lg' alt='Avatar' />
-                        <span>
-                            <p>A customed summary</p>
-                            <p style='margin-left: auto;'>10/09/2026</p>
-                        </span>
-                    </Flex>
-                {/snippet}
-                <p>Hello there !</p>
-            </Details>
-        </Stack>
+    <Stack>
+        <h2>Details</h2>
+        <Details summary="This is a Detail">
+            <p>Toulouse !</p>
+        </Details>
+        <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
+            <p>net7</p>
+        </Details>
+        <Details framed={true}>
+            {#snippet summarySnippet()}
+                <Flex align="center" justify="space-between" style="flex-grow: 1">
+                    <Avatar size="lg" alt="Avatar" />
+                    <span>
+                        <p>A customed summary</p>
+                        <p style="margin-left: auto;">10/09/2026</p>
+                    </span>
+                </Flex>
+            {/snippet}
+            <p>Hello there !</p>
+        </Details>
     </Stack>
 
     <Stack>
@@ -232,6 +236,7 @@
 
         <Flex>
             <Switch>Label</Switch>
+            <Switch required>Label</Switch>
             <Switch checked />
             <Switch disabled />
             <Switch checked disabled />
@@ -256,6 +261,18 @@
             <TextInput disabled>Label</TextInput>
             <TextInput disabled icon={SearchIcon} placeholder="Search...">Search</TextInput>
             <TextInput disabled />
+        </Flex>
+    </Stack>
+
+    <Stack>
+        <h2>Selects</h2>
+
+        <Flex align="end">
+            <Select required options={['easy', 'medium', 'hard']}>Select label</Select>
+            <Select options={['easy', 'medium', 'hard']}>Select label</Select>
+            <Select options={['azucar', 'net7', 'ui']} />
+            <Select required options={['easy', 'medium', 'hard']} disabled>Select label</Select>
+            <Select options={['azucar', 'net7', 'ui']} disabled />
         </Flex>
     </Stack>
 
