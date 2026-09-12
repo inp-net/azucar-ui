@@ -1,4 +1,5 @@
 <script lang="ts">
+    import RequiredStar from '$lib/internal/RequiredStar.svelte';
     import type { HTMLInputAttributes } from 'svelte/elements';
 
     // --- Switch ---
@@ -15,6 +16,9 @@
     {#if children}
         <span class="label">
             {@render children?.()}
+            {#if rest.required}
+                <RequiredStar />
+            {/if}
         </span>
     {/if}
     <input type="checkbox" bind:checked {...rest} />
@@ -111,12 +115,12 @@
     }
 
     input:disabled + .slider:before {
-        background-color: var(--color-border-subtle);
+        background-color: var(--color-border);
     }
 
     .switch:has(input:disabled) .label {
         --base-color: var(--color-neutral);
-        color: var(--color-border-subtle);
+        color: var(--color-border);
         cursor: not-allowed;
     }
 </style>

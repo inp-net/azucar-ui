@@ -13,7 +13,7 @@
         shadow?: boolean;
         border?: boolean;
         isUnfolded?: boolean;
-    }
+    };
 
     let {
         summary = '',
@@ -27,23 +27,25 @@
         ...rest
     }: Props = $props();
 
-    const arrowSize = "1.1em";
-    const resetStyle = $derived(!framed ? 'background-color: transparent; border-color: none; box-shadow: none;' : '');
-    const styles = $derived(
-        [rest.style, resetStyle, 'padding: 0;'].filter(Boolean).join(' ')
+    const arrowSize = '1.1em';
+    const resetStyle = $derived(
+        !framed ? 'background-color: transparent; border-color: none; box-shadow: none;' : ''
     );
+    const styles = $derived([rest.style, resetStyle, 'padding: 0;'].filter(Boolean).join(' '));
 </script>
 
-<Frame 
+<Frame
     transparent={framed && transparent}
     shadow={framed && shadow}
     border={framed && border}
     style={styles}
 >
-    <details open={isUnfolded} >
-        <summary style={`
+    <details open={isUnfolded}>
+        <summary
+            style={`
             ${framed ? 'padding: var(--size-md) var(--size-lg);' : 'padding: var(--size-md) 0;'}
-        `}>
+        `}
+        >
             <Flex gap="sm" align="center" wrap={false}>
                 <ChevronDown size={arrowSize} class="arrow" />
                 {#if !summarySnippet}
@@ -53,10 +55,13 @@
                 {/if}
             </Flex>
         </summary>
-        <div class="content" style={`
+        <div
+            class="content"
+            style={`
             ${framed ? 'padding: 0 var(--size-lg) var(--size-md) var(--size-lg);' : 'padding: 0;'}
-        `}>
-            <hr noshade/>
+        `}
+        >
+            <hr noshade />
             {@render children?.()}
         </div>
     </details>
@@ -84,8 +89,6 @@
     }
 
     .summary-text {
-        font-family: Space Grotesk, sans-serif;
-        font-weight: 700;
+        font-weight: bold;
     }
-
 </style>

@@ -136,7 +136,7 @@
 
     .btn-default:disabled {
         --base-color: var(--color-neutral);
-        color: var(--color-border-subtle);
+        color: var(--color-border);
         background: var(--color-bg);
         cursor: not-allowed;
     }
@@ -178,7 +178,7 @@
     .btn-ghost {
         background: none;
         color: var(--color-fg-low);
-        font-weight: 600;
+        font-weight: bold;
     }
 
     .btn-ghost:hover:not(:disabled) {
