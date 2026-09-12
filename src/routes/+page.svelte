@@ -158,40 +158,36 @@
     </Stack>
 
     <Stack>
-        <h2>Layouts</h2>
+        <h2>Scroll</h2>
+        <Scroll>
+            {#each Array(60)}
+                <div
+                    style="width: 30px; height: 30px; background-color: var(--color-bg-solid)"
+                ></div>
+            {/each}
+        </Scroll>
+    </Stack>
 
-        <Stack>
-            <h3>Scroll</h3>
-            <Scroll>
-                {#each Array(60)}
-                    <div
-                        style="width: 30px; height: 30px; background-color: var(--color-bg-solid)"
-                    ></div>
-                {/each}
-            </Scroll>
-        </Stack>
-
-        <Stack>
-            <h3>Details</h3>
-            <Details summary="This is a Detail">
-                <p>Toulouse !</p>
-            </Details>
-            <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
-                <p>net7</p>
-            </Details>
-            <Details framed={true}>
-                {#snippet summarySnippet()}
-                    <Flex align="center" justify="space-between" style="flex-grow: 1">
-                        <Avatar size="lg" alt="Avatar" />
-                        <span>
-                            <p>A customed summary</p>
-                            <p style="margin-left: auto;">10/09/2026</p>
-                        </span>
-                    </Flex>
-                {/snippet}
-                <p>Hello there !</p>
-            </Details>
-        </Stack>
+    <Stack>
+        <h2>Details</h2>
+        <Details summary="This is a Detail">
+            <p>Toulouse !</p>
+        </Details>
+        <Details framed={true} border={true} shadow={true} summary="This is a Framed Detail">
+            <p>net7</p>
+        </Details>
+        <Details framed={true}>
+            {#snippet summarySnippet()}
+                <Flex align="center" justify="space-between" style="flex-grow: 1">
+                    <Avatar size="lg" alt="Avatar" />
+                    <span>
+                        <p>A customed summary</p>
+                        <p style="margin-left: auto;">10/09/2026</p>
+                    </span>
+                </Flex>
+            {/snippet}
+            <p>Hello there !</p>
+        </Details>
     </Stack>
 
     <Stack>
