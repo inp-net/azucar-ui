@@ -240,6 +240,7 @@
 
         <Flex>
             <Switch>Label</Switch>
+            <Switch required>Label</Switch>
             <Switch checked />
             <Switch disabled />
             <Switch checked disabled />
@@ -271,14 +272,11 @@
         <h2>Selects</h2>
 
         <Flex align="end">
-            <Select id="select" options={['azucar', 'net7', 'ui']} />
-            <Select id="select" options={['azucar', 'net7', 'ui']} variant="default" />
-            <Select id="new-select" required options={['easy', 'medium', 'hard']}
-                >Select label</Select
-            >
-            <Select id="newnew-select" options={['net7', 'inp-net']} variant="outline"
-                >Select label</Select
-            >
+            <Select required options={['easy', 'medium', 'hard']}>Select label</Select>
+            <Select options={['easy', 'medium', 'hard']}>Select label</Select>
+            <Select options={['azucar', 'net7', 'ui']} />
+            <Select required options={['easy', 'medium', 'hard']} disabled>Select label</Select>
+            <Select options={['azucar', 'net7', 'ui']} disabled />
         </Flex>
     </Stack>
 

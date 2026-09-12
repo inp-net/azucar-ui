@@ -46,7 +46,7 @@
 
     :global(th) {
         background-color: var(--color-bg-subtle);
-        font-weight: 600;
+        font-weight: bold;
         border-bottom: 1px solid var(--color-border);
     }
 </style>

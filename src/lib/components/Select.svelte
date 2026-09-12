@@ -2,50 +2,39 @@
     import type { HTMLSelectAttributes } from 'svelte/elements';
     import type { Snippet } from 'svelte';
     import { ChevronDown } from '@lucide/svelte';
+    import RequiredStar from '$lib/internal/RequiredStar.svelte';
 
     // --- Select ---
     // Select is an Input where you choose between a selection.
-    // Style follow the Button component
+    // Style follow the TextInput component.
 
     type Props = HTMLSelectAttributes & {
-        variant?: 'default' | 'outline';
         options?: string[];
         value?: string;
-        disabled?: boolean;
         children?: Snippet;
     };
 
-    let {
-        id = '',
-        variant = 'default',
-        options = [],
-        value = $bindable(),
-        disabled = false,
-        required,
-        children,
-        ...restProps
-    }: Props = $props();
+    let { id = '', options = [], value = $bindable(), children, ...rest }: Props = $props();
 </script>
 
 <label class="select-label" for={id}>
     {#if children}
         <span>
             {@render children?.()}
-            {#if required}
-                <!-- The little red star indicating required field -->
-                <span class="required-star" aria-hidden="true">*</span>
+            {#if rest.required}
+                <RequiredStar />
             {/if}
         </span>
     {/if}
-    <div class="select-container select-{variant}">
-        <select class="select" bind:value {disabled} {required} {id} {...restProps}>
+    <div class="select-container">
+        <select class="select" bind:value {id} {...rest}>
             {#each options as option}
                 <option value={option}>{option}</option>
             {/each}
         </select>
-        <div class="arrow" aria-hidden="true">
+        <span class="arrow" aria-hidden="true">
             <ChevronDown size="1.1em" />
-        </div>
+        </span>
     </div>
 </label>
 
@@ -62,6 +51,11 @@
         align-items: center;
         border-radius: var(--corner-radius);
         width: 100%;
+        color: var(--color-fg-low);
+        background-color: var(--color-bg);
+        box-shadow:
+            0 0 0 1px var(--color-border) inset,
+            var(--shadow-surface);
     }
 
     .select {
@@ -73,42 +67,29 @@
         width: 100%;
     }
 
-    .select-default {
-        color: var(--color-fg-solid);
-        background: linear-gradient(
-            in oklch to bottom,
-            var(--color-bg-solid),
-            var(--color-bg-solid-hover)
-        );
-        box-shadow: var(--shadow-surface);
-    }
-
-    .select-default:hover:not(:disabled) {
-        background: linear-gradient(
-            in oklch to bottom,
-            var(--color-bg-solid-hover),
-            var(--color-bg-solid-hover)
-        );
-    }
-
-    .select-outline {
-        color: var(--color-fg-low);
-        background-color: var(--color-bg);
-        box-shadow:
-            0 0 0 1px var(--color-border) inset,
-            var(--shadow-surface);
-    }
-
-    .select-outline:hover:not(:disabled) {
+    .select-container:hover:has(> .select:not(:disabled)) {
         background-color: var(--color-bg-hover);
     }
 
-    .select-outline:active:not(:disabled) {
-        color: var(--color-fg-low);
+    .select-container:active:has(> .select:not(:disabled)) {
         background-color: var(--color-bg-active);
         box-shadow:
             0 0 0 1px var(--color-border-focus) inset,
             var(--shadow-surface);
+    }
+
+    .select-label:has(select:disabled) {
+        --base-color: var(--color-neutral);
+        color: var(--color-border);
+        cursor: not-allowed;
+    }
+
+    .select-container:has(> .select:disabled) {
+        color: var(--color-border);
+    }
+
+    .select:disabled {
+        cursor: not-allowed;
     }
 
     .arrow {
@@ -121,9 +102,5 @@
         justify-content: center;
         color: currentColor;
         pointer-events: none;
-    }
-
-    .required-star {
-        color: var(--color-danger);
     }
 </style>
