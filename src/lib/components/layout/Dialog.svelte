@@ -13,7 +13,7 @@
     let { children, ...rest }: Props = $props();
 </script>
 
-<dialog {...rest}>
+<dialog popover="auto" {...rest}>
     <Frame shadow>
         {@render children?.()}
     </Frame>

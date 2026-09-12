@@ -7,12 +7,14 @@
         Button,
         ButtonGroup,
         Details,
+        Dialog,
         Frame,
         Flex,
         Stack,
         Switch,
         Table,
         TextInput,
+        Tooltip,
         Select,
         Slider,
         Skeleton,
@@ -34,8 +36,6 @@
         CopyIcon,
         SquareArrowOutUpRightIcon
     } from '@lucide/svelte';
-    import Tooltip from '$lib/components/Tooltip.svelte';
-    import Dialog from '$lib/components/layout/Dialog.svelte';
 
     const scales = [
         'color-bg-app',
@@ -195,15 +195,15 @@
     <Stack>
         <h2>Dialogs</h2>
         <Flex>
-            <Button command="show-modal" commandfor="my-dialog" icon={SquareArrowOutUpRightIcon}
+            <Button command="show-popover" commandfor="my-dialog" icon={SquareArrowOutUpRightIcon}
                 >Open dialog</Button
             >
-            <Dialog id="my-dialog">
+            <Dialog id="my-dialog" popover="auto">
                 <Stack gap="md">
                     <Flex justify="space-between">
                         <h3>Hello</h3>
                         <Button
-                            command="close"
+                            command="hide-popover"
                             commandfor="my-dialog"
                             icon={XIcon}
                             variant="ghost"
