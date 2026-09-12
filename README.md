@@ -95,23 +95,24 @@ Components are self-documented, here is a list of the ones currently available:
 
 - Layout
     - [Box](./src/lib/components/layout/Box.svelte)
-    - [Flex](./src/lib/components/layout/Flex.svelte)
-    - [Stack](./src/lib/components/layout/Stack.svelte)
     - [Details](./src/lib/components/layout/Details.svelte)
+    - [Dialog](./src/lib/components/layout/Dialog.svelte)
+    - [Flex](./src/lib/components/layout/Flex.svelte)
+    - [Scroll](./src/lib/components/layout/Scroll.svelte)
+    - [Stack](./src/lib/components/layout/Stack.svelte)
 - [Avatar](./src/lib/components/Avatar.svelte)
 - [Badge](./src/lib/components/Badge.svelte)
 - [Button](./src/lib/components/Button.svelte)
-- [Frame](./src/lib/components/Frame.svelte)
 - [Button Group](./src/lib/components/ButtonGroup.svelte)
+- [Frame](./src/lib/components/Frame.svelte)
 - [Select](./src/lib/components/Select.svelte)
-- [Slider](./src/lib/components/Slider.svelte)
 - [Skeleton](./src/lib/components/Skeleton.svelte)
 - [SkeletonText](./src/lib/components/SkeletonText.svelte)
+- [Slider](./src/lib/components/Slider.svelte)
 - [Switch](./src/lib/components/Switch.svelte)
 - [Table](./src/lib/components/Table.svelte)
 - [Text Input](./src/lib/components/TextInput.svelte)
 - [Tooltip](./src/lib/components/Tooltip.svelte)
-- Modal ⌛
 - Toast ⌛
 - Tabs ⌛
 
