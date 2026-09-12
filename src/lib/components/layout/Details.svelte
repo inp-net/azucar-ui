@@ -5,6 +5,9 @@
     import Frame from '../Frame.svelte';
     import Flex from './Flex.svelte';
 
+    // --- Details ---
+    // A component that displays a summary and can be unfolded to reveal additional content.
+
     type Props = HTMLAttributes<HTMLElement> & {
         summary?: string;
         summarySnippet?: Snippet;

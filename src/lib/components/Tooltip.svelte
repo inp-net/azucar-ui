@@ -1,6 +1,10 @@
 <script lang="ts">
     import type { HTMLAttributes } from 'svelte/elements';
 
+    // --- Tooltip ---
+    // A simple tooltip component that can be used to display additional information when hovering over or focusing on an element.
+    // It can be positioned above, below, to the left, or to the right of the trigger element.
+
     type Props = HTMLAttributes<HTMLElement> & {
         text: string;
         position?: 'top' | 'bottom' | 'left' | 'right';
