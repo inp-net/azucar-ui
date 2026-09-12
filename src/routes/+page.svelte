@@ -198,7 +198,7 @@
             <Button command="show-popover" commandfor="my-dialog" icon={SquareArrowOutUpRightIcon}
                 >Open dialog</Button
             >
-            <Dialog id="my-dialog" popover="auto">
+            <Dialog id="my-dialog">
                 <Stack gap="md">
                     <Flex justify="space-between">
                         <h3>Hello</h3>
