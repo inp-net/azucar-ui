@@ -21,4 +21,4 @@ export { default as TextInput } from './components/TextInput.svelte';
 export { default as Tooltip } from './components/Tooltip.svelte';
 
 // Types
-export type { Size } from './types';
+export type { Size } from './types.ts';

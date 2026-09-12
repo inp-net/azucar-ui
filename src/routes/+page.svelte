@@ -34,6 +34,7 @@
         CopyIcon
     } from '@lucide/svelte';
     import Tooltip from '$lib/components/Tooltip.svelte';
+    import Dialog from '$lib/components/layout/Dialog.svelte';
 
     const scales = [
         'color-bg-app',
