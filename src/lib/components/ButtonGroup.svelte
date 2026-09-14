@@ -2,6 +2,9 @@
     import type { Snippet } from 'svelte';
     import Flex from './layout/Flex.svelte';
 
+    // --- ButtonGroup ---
+    // A component that groups buttons together and applies consistent styling.
+
     type Props = {
         children: Snippet;
     };

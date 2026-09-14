@@ -1,6 +1,7 @@
 // Layout components
 export { default as Box } from './components/layout/Box.svelte';
 export { default as Details } from './components/layout/Details.svelte';
+export { default as Dialog } from './components/layout/Dialog.svelte';
 export { default as Flex } from './components/layout/Flex.svelte';
 export { default as Stack } from './components/layout/Stack.svelte';
 export { default as Scroll } from './components/layout/Scroll.svelte';
@@ -19,6 +20,5 @@ export { default as Switch } from './components/Switch.svelte';
 export { default as Table } from './components/Table.svelte';
 export { default as TextInput } from './components/TextInput.svelte';
 export { default as Tooltip } from './components/Tooltip.svelte';
-
 // Types
-export type { Size } from './types';
+export type { Size } from './types.ts';

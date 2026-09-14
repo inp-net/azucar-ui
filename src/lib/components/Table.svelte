@@ -1,6 +1,9 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
 
+    // --- Table ---
+    // A simple table component that wraps its children in a table element with basic styling.
+
     type Props = {
         children: Snippet;
     };
