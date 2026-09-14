@@ -21,7 +21,7 @@
 
     let flexName = (s: string) => {
         if (s === 'center') {
-            return 'center'
+            return 'center';
         } else if (s === 'left') {
             return 'flex-start';
         } else {
@@ -32,37 +32,34 @@
     let mainpopover: HTMLElement | null = $state(null);
 
     function handleClick(action: string) {
-        if (eventAction)
-            eventAction(action);
+        if (eventAction) eventAction(action);
 
-        if (mainpopover)
-            mainpopover.hidePopover();
-    };
+        if (mainpopover) mainpopover.hidePopover();
+    }
 </script>
 
-<!-- <svelte:window onclick={handlePopoverClick} /> -->
+{#if children}
+    {@render children()}
+{/if}
 
-<button popovertarget={id} popovertargetaction="toggle" style="anchor-name: --anchor-{id};">
-    {#if children}
-        {@render children()}
-    {/if}
-</button>
-
-<div 
+<div
     bind:this={mainpopover}
-    class='frame' 
-    popover="auto" 
-    {id} 
+    class="frame"
+    popover="auto"
+    {id}
     style={`
         justify-content: ${align};
         align-items: ${flexName(align)};
-        position-anchor: --anchor-${id};
     `}
 >
-    <Frame border={true} transparent={true} style="padding: 1px; border-radius: calc(var(--corner-radius) / 2);">
-        <Stack gap='zero'>
+    <Frame
+        border={true}
+        transparent={true}
+        style="padding: 1px; border-radius: calc(var(--corner-radius) / 2);"
+    >
+        <Stack gap="zero">
             {#each menu as item}
-                <button class='dropdown-item' onclick={() => handleClick(item)}>
+                <button class="dropdown-item" onclick={() => handleClick(item)}>
                     {item}
                 </button>
             {/each}
@@ -72,8 +69,10 @@
 
 <style>
     .frame {
+        position-anchor: auto;
         top: anchor(bottom);
         left: anchor(center);
+        justify-self: anchor-center;
         translate: -50% 4px;
         border: none;
         background: transparent;
