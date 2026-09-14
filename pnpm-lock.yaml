@@ -36,9 +36,6 @@ importers:
       '@vitest/browser':
         specifier: ^4.1.10
         version: 4.1.10(vite@8.2.0)(vitest@4.1.10(vite@8.2.0))
-      lefthook:
-        specifier: ^2.1.12
-        version: 2.1.12
       lightningcss:
         specifier: ^1.33.0
         version: 1.33.0

@@ -81,6 +81,16 @@
         min-width: 5vw;
         margin: 0;
         filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+        transition:
+            opacity 120ms ease,
+            transform 120ms ease;
+    }
+
+    @starting-style {
+        .frame {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
     }
 
     .frame:popover-open {
