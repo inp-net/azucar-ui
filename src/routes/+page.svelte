@@ -416,6 +416,7 @@
         <Toast loading>Loading...</Toast>
         <Toast customIcon={SearchIcon}>With custom icon</Toast>
     </Stack>
+
     <Stack>
         <h2>Tabs</h2>
 
