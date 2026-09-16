@@ -84,20 +84,10 @@
 <style>
     .btn {
         --active-scale-factor: 0.98;
-
         position: relative;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        font: inherit;
-        line-height: 1.25;
-        text-align: center;
-        text-decoration: none;
-        white-space: nowrap;
-        border: none;
         border-radius: var(--corner-radius);
-        cursor: pointer;
-        user-select: none;
         gap: var(--gap-icon);
         padding: var(--padding-y-icon) var(--size-md);
     }
