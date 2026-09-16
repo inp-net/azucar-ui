@@ -30,15 +30,7 @@
     {@render children()}
 {/if}
 
-<div
-    bind:this={mainpopover}
-    class={`frame frame-${align}`}
-    popover="auto"
-    {id}
-    style={`
-        justify-content: ${align};
-    `}
->
+<div bind:this={mainpopover} class={`frame frame-${align}`} popover="auto" {id}>
     <Frame
         border={true}
         transparent={true}
