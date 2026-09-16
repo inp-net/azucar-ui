@@ -36,6 +36,7 @@
         CopyIcon,
         SquareArrowOutUpRightIcon
     } from '@lucide/svelte';
+    import Toast from '$lib/components/Toast.svelte';
 
     const scales = [
         'color-bg-app',
@@ -402,6 +403,19 @@
             </tbody>
         </Table>
     </Stack>
+
+    <Stack>
+        <h2>Toasts</h2>
+
+        <Toast>Simple toast</Toast>
+        <Toast variant="success">Successful toast</Toast>
+        <Toast variant="warning">Warning toast</Toast>
+        <Toast variant="danger">Error toast</Toast>
+        <Toast closeable>With close button</Toast>
+        <Toast loading>Loading...</Toast>
+        <Toast customIcon={SearchIcon}>With custom icon</Toast>
+    </Stack>
+
     <Stack>
         <h2>Sliders</h2>
 
