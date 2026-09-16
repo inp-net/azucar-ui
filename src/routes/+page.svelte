@@ -13,8 +13,10 @@
         Stack,
         Switch,
         Table,
+        Tabs,
         TextInput,
         Tooltip,
+        Toast,
         Select,
         Slider,
         Skeleton,
@@ -36,7 +38,6 @@
         CopyIcon,
         SquareArrowOutUpRightIcon
     } from '@lucide/svelte';
-    import Toast from '$lib/components/Toast.svelte';
 
     const scales = [
         'color-bg-app',
@@ -414,6 +415,21 @@
         <Toast closeable>With close button</Toast>
         <Toast loading>Loading...</Toast>
         <Toast customIcon={SearchIcon}>With custom icon</Toast>
+    </Stack>
+    <Stack>
+        <h2>Tabs</h2>
+
+        <Tabs tabs={['Groups', 'Infos', 'Family']}>
+            {#snippet content(index)}
+                {#if index === 0}
+                    <p>Holà</p>
+                {:else if index === 1}
+                    <p>Bonjour</p>
+                {:else}
+                    <p>Hello</p>
+                {/if}
+            {/snippet}
+        </Tabs>
     </Stack>
 
     <Stack>
