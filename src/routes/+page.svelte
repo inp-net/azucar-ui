@@ -36,6 +36,7 @@
         CopyIcon,
         SquareArrowOutUpRightIcon
     } from '@lucide/svelte';
+    import Tabs from '$lib/components/Tabs.svelte';
 
     const scales = [
         'color-bg-app',
@@ -402,6 +403,23 @@
             </tbody>
         </Table>
     </Stack>
+
+    <Stack>
+        <h2>Tabs</h2>
+
+        <Tabs tabs={['Groups', 'Infos', 'Family']}>
+            {#snippet content(index)}
+                {#if index === 0}
+                    <p>Holà</p>
+                {:else if index === 1}
+                    <p>Bonjour</p>
+                {:else}
+                    <p>Hello</p>
+                {/if}
+            {/snippet}
+        </Tabs>
+    </Stack>
+
     <Stack>
         <h2>Sliders</h2>
 
