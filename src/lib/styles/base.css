@@ -131,7 +131,8 @@ summary::marker {
     display: none;
 }
 
-select {
+select,
+button {
     font: inherit;
     line-height: 1.25;
     text-align: center;

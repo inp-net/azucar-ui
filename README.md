@@ -111,10 +111,10 @@ Components are self-documented, here is a list of the ones currently available:
 - [Slider](./src/lib/components/Slider.svelte)
 - [Switch](./src/lib/components/Switch.svelte)
 - [Table](./src/lib/components/Table.svelte)
+- [Tabs](./src/lib/components/Tabs.svelte)
 - [Text Input](./src/lib/components/TextInput.svelte)
 - [Toast](./src/lib/components/Toast.svelte)
 - [Tooltip](./src/lib/components/Tooltip.svelte)
-- Tabs ⌛
 
 _🚧 = Design done, implementation in progress._
 _⌛ = Design in progress._
