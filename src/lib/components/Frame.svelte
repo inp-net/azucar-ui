@@ -34,7 +34,7 @@
 <style>
     .frame {
         border-radius: var(--corner-radius);
-        padding: var(--size-md) var(--size-lg);
+        padding: var(--size-md);
         color: var(--color-fg-high);
         max-width: 100%;
         min-width: 0;

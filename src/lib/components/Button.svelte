@@ -69,7 +69,11 @@
 >
     {#if icon || loading}
         {@const Icon = loading ? LoaderCircleIcon : icon}
-        <Icon size={iconSize} class="btn-icon" aria-hidden="true" />
+        <Icon
+            size={iconSize}
+            class={`btn-icon ${loading ? 'loading-icon' : ''}`}
+            aria-hidden="true"
+        />
     {/if}
 
     {#if children}
@@ -199,19 +203,5 @@
 
     .btn-loading {
         pointer-events: none;
-    }
-
-    .btn-loading > :global(.btn-icon) {
-        animation: spin 1s linear infinite;
-        transform-origin: center;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
     }
 </style>

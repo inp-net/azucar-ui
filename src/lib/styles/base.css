@@ -197,3 +197,8 @@ dialog {
         opacity: 1;
     }
 }
+
+.loading-icon {
+    animation: spin 1s linear infinite;
+    transform-origin: center;
+}
