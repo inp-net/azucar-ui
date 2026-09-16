@@ -15,18 +15,8 @@
         align = 'center',
         eventAction,
         id = 'mainpopover',
-        children,
-        ...rest
+        children
     }: Props = $props();
-
-    let alignStyles = $derived.by(() => {
-        if (align === 'left') {
-            return 'left: anchor(left); translate: 0 4px;';
-        } else if (align === 'right') {
-            return 'left: anchor(right); translate: -100% 4px;';
-        }
-        return 'left: anchor(center); translate: -50% 4px;';
-    });
 
     let mainpopover: HTMLElement | null = $state(null);
 
@@ -42,12 +32,11 @@
 
 <div
     bind:this={mainpopover}
-    class="frame"
+    class={`frame frame-${align}`}
     popover="auto"
     {id}
     style={`
         justify-content: ${align};
-        align-items: ${alignStyles};
     `}
 >
     <Frame
@@ -71,14 +60,14 @@
         top: anchor(bottom);
         left: anchor(center);
         justify-self: anchor-center;
-        translate: -50% 4px;
+        translate: -50% var(--size-xs);
         border: none;
         background: transparent;
         padding: 0;
         width: fit-content;
         min-width: 5vw;
         margin: 0;
-        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+        filter: drop-shadow(0px 2px var(--size-xs) rgba(0, 0, 0, 0.15));
         transition:
             opacity 120ms ease,
             transform 120ms ease;
@@ -87,7 +76,7 @@
     @starting-style {
         .frame {
             opacity: 0;
-            transform: translateY(-4px);
+            transform: translateY(calc(-1 * var(--size-xs)));
         }
     }
 
@@ -105,5 +94,19 @@
 
     .dropdown-item:hover {
         background-color: var(--color-bg-hover);
+    }
+
+    .frame-center {
+        left: anchor(center);
+        translate: -50% var(--size-xs);
+    }
+
+    .frame-left {
+        left: anchor(left);
+    }
+
+    .frame-right {
+        left: anchor(right);
+        translate: -100% var(--size-xs);
     }
 </style>

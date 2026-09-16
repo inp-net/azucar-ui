@@ -67,7 +67,7 @@
         copyToClipboard(JSON.stringify(settings, null, 2));
     };
 
-    let dropdownOutput: string = $state("");
+    let dropdownOutput: string = $state('');
 </script>
 
 {#snippet colorFrameWithTooltip(color: string)}
@@ -273,14 +273,43 @@
         <p>Actions output : <b>{dropdownOutput}</b></p>
 
         <Flex gap="xxl" align="center">
-            <Dropdown id='menu1' menu={['Create file', 'Create folder']} align='center' eventAction={(s: string) => dropdownOutput = s}>
-                <Button variant='ghost' icon={SearchIcon} popovertarget='menu1' />
+            <Dropdown
+                id="menu1"
+                menu={['Create file', 'Create folder']}
+                align="center"
+                eventAction={(s: string) => (dropdownOutput = s)}
+            >
+                <Button variant="ghost" icon={SearchIcon} popovertarget="menu1" />
             </Dropdown>
-            <Dropdown id='menu2' menu={['Profile', 'Settings']} align='left' eventAction={(s: string) => dropdownOutput = s}>
-                <Button variant='ghost' icon={SearchIcon} popovertarget='menu2'>Left Align Dropdown</Button>
+            <Dropdown
+                id="menu2"
+                menu={['Profile', 'Settings']}
+                align="left"
+                eventAction={(s: string) => (dropdownOutput = s)}
+            >
+                <Button variant="ghost" icon={SearchIcon} popovertarget="menu2"
+                    >Left Align Dropdown</Button
+                >
             </Dropdown>
-            <Dropdown id='menu3' menu={['New item', 'New section']} align='right' eventAction={(s: string) => dropdownOutput = s}>
-                <Button variant='ghost' icon={SearchIcon} popovertarget='menu3'>Right Align Dropdown</Button>
+            <Dropdown
+                id="menu3"
+                menu={['New item', 'New section']}
+                align="right"
+                eventAction={(s: string) => (dropdownOutput = s)}
+            >
+                <Button variant="ghost" icon={SearchIcon} popovertarget="menu3"
+                    >Right Align Dropdown</Button
+                >
+            </Dropdown>
+            <Dropdown
+                id="menu4"
+                menu={['New item', 'New section']}
+                align="center"
+                eventAction={(s: string) => (dropdownOutput = s)}
+            >
+                <Button variant="ghost" icon={SearchIcon} popovertarget="menu4"
+                    >Center Align Dropdown</Button
+                >
             </Dropdown>
         </Flex>
     </Stack>
