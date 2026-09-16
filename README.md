@@ -112,8 +112,8 @@ Components are self-documented, here is a list of the ones currently available:
 - [Switch](./src/lib/components/Switch.svelte)
 - [Table](./src/lib/components/Table.svelte)
 - [Text Input](./src/lib/components/TextInput.svelte)
+- [Toast](./src/lib/components/Toast.svelte)
 - [Tooltip](./src/lib/components/Tooltip.svelte)
-- Toast ⌛
 - Tabs ⌛
 
 _🚧 = Design done, implementation in progress._
@@ -130,3 +130,44 @@ pnpm install
 pnpm lefthook install # Install git hooks
 pnpm dev
 ```
+
+## Integrations
+
+<details>
+<summary>Toaster with `svelte-sonner`</summary>
+
+You can use the Azucar UI Toast component with the `svelte-sonner` library to create a toast notification system.
+
+Here's an example on how to use it with a custom icon and content:
+
+```svelte
+<script lang="ts">
+    import { Toaster, toast } from 'svelte-sonner';
+    import { Button, Toast } from 'azucar-ui';
+    import { SkullIcon } from 'azucar-ui/icons';
+
+    function showToast() {
+        toast.custom(Toast, {
+            componentProps: {
+                children: toastContent,
+                variant: 'danger',
+                closeable: true,
+                customIcon: toastIcon
+            }
+        });
+    }
+</script>
+
+{#snippet toastContent()}
+    <p>Bomboclat!</p>
+{/snippet}
+
+{#snippet toastIcon()}
+    <SkullIcon />
+{/snippet}
+
+<Toaster />
+<Button on:click={showToast}>Show toast</Button>
+```
+
+</details>
