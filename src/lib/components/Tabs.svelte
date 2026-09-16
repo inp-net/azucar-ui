@@ -7,12 +7,13 @@
     type Props = HTMLAttributes<HTMLElement> & {
         tabs: string[];
         selected?: number;
-        content?: Snippet<[number]>;
+        content?: Snippet<[string]>;
     };
 
     let { content, class: className, tabs = [], selected = $bindable(), ...rest }: Props = $props();
 
     selected = selected ?? 0;
+    const activeTab = $derived(tabs[selected] ?? '');
 </script>
 
 <Flex {...rest} class={className} gap="zero">
@@ -30,7 +31,7 @@
     {/each}
 </Flex>
 
-{@render content?.(selected ?? 0)}
+{@render content?.(activeTab)}
 
 <style>
     :global(.tabs-item) {

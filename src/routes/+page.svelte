@@ -421,12 +421,12 @@
         <h2>Tabs</h2>
 
         <Tabs tabs={['Groups', 'Infos', 'Family']}>
-            {#snippet content(index)}
-                {#if index === 0}
+            {#snippet content(tab)}
+                {#if tab === 'Groups'}
                     <p>Holà</p>
-                {:else if index === 1}
+                {:else if tab === 'Infos'}
                     <p>Bonjour</p>
-                {:else}
+                {:else if tab === 'Family'}
                     <p>Hello</p>
                 {/if}
             {/snippet}
