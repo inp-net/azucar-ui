@@ -19,6 +19,7 @@ export { default as Slider } from './components/Slider.svelte';
 export { default as Switch } from './components/Switch.svelte';
 export { default as Tabs } from './components/Tabs.svelte';
 export { default as Table } from './components/Table.svelte';
+export { default as Tabs } from './components/Tabs.svelte';
 export { default as TextInput } from './components/TextInput.svelte';
 export { default as Toast } from './components/Toast.svelte';
 export { default as Tooltip } from './components/Tooltip.svelte';
