@@ -19,21 +19,19 @@
         ...rest
     }: Props = $props();
 
-    let flexName = (s: string) => {
-        if (s === 'center') {
-            return 'center';
-        } else if (s === 'left') {
-            return 'flex-start';
-        } else {
-            return 'flex-end';
+    let alignStyles = $derived.by(() => {
+        if (align === 'left') {
+            return 'left: anchor(left); translate: 0 4px;';
+        } else if (align === 'right') {
+            return 'left: anchor(right); translate: -100% 4px;';
         }
-    };
+        return 'left: anchor(center); translate: -50% 4px;';
+    });
 
     let mainpopover: HTMLElement | null = $state(null);
 
     function handleClick(action: string) {
         if (eventAction) eventAction(action);
-
         if (mainpopover) mainpopover.hidePopover();
     }
 </script>
@@ -49,7 +47,7 @@
     {id}
     style={`
         justify-content: ${align};
-        align-items: ${flexName(align)};
+        align-items: ${alignStyles};
     `}
 >
     <Frame
