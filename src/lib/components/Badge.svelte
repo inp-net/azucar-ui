@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { HTMLAttributes } from 'svelte/elements';
     import type { Component } from 'svelte';
+    import IconWrapper from './IconWrapper.svelte';
 
     // --- Badge ---
     // A simple badge component for displaying small pieces of information.
@@ -19,17 +20,7 @@
 
 <div class={classes} {...rest}>
     {#if icon}
-        <!-- making a container fixed size reduce overhead, no need to add size
-             parameters to svg -->
-        {@const IconComponent = icon}
-        <div
-            class="icon-container"
-            style={`
-                --icon-size: ${iconSize};
-            `}
-        >
-            <IconComponent class="icon" aria-hidden="true" />
-        </div>
+        <IconWrapper {icon} size={iconSize} />
     {/if}
     {@render children?.()}
 </div>
@@ -58,17 +49,5 @@
 
     .badge-ghost {
         color: var(--color-fg-low);
-    }
-
-    .icon-container {
-        height: var(--icon-size);
-        width: max-content;
-    }
-
-    :global(.icon-container > svg) {
-        position: relative;
-        top: -1px;
-        width: 100%;
-        height: 100%;
     }
 </style>
