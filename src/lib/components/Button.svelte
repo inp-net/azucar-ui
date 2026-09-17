@@ -1,6 +1,8 @@
 <script lang="ts">
-    import { LoaderCircleIcon, type Icon } from '@lucide/svelte';
+    import { LoaderCircleIcon } from '@lucide/svelte';
     import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+    import type { Component } from 'svelte';
+    import IconWrapper from './IconWrapper.svelte';
 
     // --- Button ---
     // The button, pillar of interaction.
@@ -22,7 +24,7 @@
     type Props = (AnchorProps | ButtonProps) & {
         variant?: 'default' | 'outline' | 'ghost';
         ref?: HTMLElement | null;
-        icon?: typeof Icon;
+        icon?: Component;
         loading?: boolean;
     };
 
@@ -68,12 +70,7 @@
     {...rest}
 >
     {#if icon || loading}
-        {@const Icon = loading ? LoaderCircleIcon : icon}
-        <Icon
-            size={iconSize}
-            class={`btn-icon ${loading ? 'loading-icon' : ''}`}
-            aria-hidden="true"
-        />
+        <IconWrapper icon={loading ? LoaderCircleIcon : icon} size={iconSize} />
     {/if}
 
     {#if children}

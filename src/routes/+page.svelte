@@ -238,6 +238,7 @@
             <Button loading>Submit</Button>
             <Button variant="outline" disabled>Hello</Button>
             <Button variant="ghost" disabled>Hello</Button>
+            <Button icon={Icon}>net7</Button>
         </Flex>
 
         <Flex>
