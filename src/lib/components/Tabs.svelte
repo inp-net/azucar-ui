@@ -2,7 +2,7 @@
     import type { HTMLAttributes } from 'svelte/elements';
     import type { Snippet } from 'svelte';
     import Flex from './layout/Flex.svelte';
-    import { Stack } from '$lib/index.ts';
+    import Stack from './layout/Stack.svelte';
 
     type Props = HTMLAttributes<HTMLElement> & {
         tabs: string[];
