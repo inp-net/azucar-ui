@@ -1,12 +1,11 @@
 <script lang="ts">
     import type { Component } from 'svelte';
-    import type { LucideIcon } from '@lucide/svelte';
 
     // --- IconWrapper ---
     // Wrapper around icon. Supports LucideIcon and regular svg component.
 
     type Props = {
-        icon?: Component | LucideIcon;
+        icon?: Component;
         size?: string;
     };
 
