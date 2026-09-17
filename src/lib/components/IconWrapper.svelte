@@ -28,7 +28,6 @@
 
     /* make the SVG in the component take all the space */
     :global(.icon-wrapper > svg) {
-        position: relative;
         width: 100%;
         height: 100%;
     }
