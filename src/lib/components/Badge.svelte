@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { HTMLAttributes } from 'svelte/elements';
     import type { Component } from 'svelte';
-    import IconWrapper from './IconWrapper.svelte';
+    import IconWrapper from '$lib/internal/IconWrapper.svelte';
 
     // --- Badge ---
     // A simple badge component for displaying small pieces of information.
