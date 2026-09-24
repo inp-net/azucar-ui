@@ -13,12 +13,12 @@
     let { children, text, class: className, position = 'top', ...rest }: Props = $props();
 </script>
 
-<div class="tooltip-wrapper" {...rest}>
+<div class={`tooltip-wrapper ${className || ''}`} {...rest}>
     <span class="tooltip-trigger" role="button" tabindex={children ? 0 : undefined}>
         {@render children?.()}
     </span>
 
-    <span class={`tooltip-bubble tooltip-${position} ${className || ''}`} role="tooltip">
+    <span class={`tooltip-bubble tooltip-${position}`} role="tooltip">
         {text}
     </span>
 </div>
