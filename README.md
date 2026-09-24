@@ -121,7 +121,7 @@ _⌛ = Design in progress._
 
 _You can easily create custom components that fits with Azucar UI using the design tokens and the color palette system._
 
-## Contributing
+## Contributing
 
 Setup the project and run the demo page with:
 
