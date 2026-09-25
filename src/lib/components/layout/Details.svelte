@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { HTMLAttributes } from 'svelte/elements';
-    import { ChevronDown } from '@lucide/svelte';
+    import { ChevronRightIcon } from '@lucide/svelte';
     import type { Snippet } from 'svelte';
     import Frame from '../Frame.svelte';
     import Flex from './Flex.svelte';
@@ -11,46 +11,40 @@
     type Props = HTMLAttributes<HTMLElement> & {
         summary?: string;
         summarySnippet?: Snippet;
-        framed?: boolean;
+        inline?: boolean;
         transparent?: boolean;
         shadow?: boolean;
         border?: boolean;
-        isUnfolded?: boolean;
+        isOpen?: boolean;
     };
 
     let {
         summary = '',
         summarySnippet,
-        framed = false,
+        inline = false,
         transparent = false,
         shadow = false,
         border = false,
-        isUnfolded = $bindable(false),
+        isOpen = $bindable(false),
         children,
         ...rest
     }: Props = $props();
 
     const arrowSize = '1.1em';
-    const resetStyle = $derived(
-        !framed ? 'background-color: transparent; border-color: none; box-shadow: none;' : ''
-    );
-    const styles = $derived([rest.style, resetStyle, 'padding: 0;'].filter(Boolean).join(' '));
 </script>
 
 <Frame
-    transparent={framed && transparent}
-    shadow={framed && shadow}
-    border={framed && border}
-    style={styles}
+    class={`details-frame`}
+    transparent={!inline && transparent}
+    shadow={!inline && shadow}
+    border={!inline && border}
+    interactive={!inline}
+    {...rest}
 >
-    <details open={isUnfolded}>
-        <summary
-            style={`
-            ${framed ? 'padding: var(--size-md) var(--size-lg);' : 'padding: var(--size-md) 0;'}
-        `}
-        >
+    <details open={isOpen}>
+        <summary class:is-inline={inline}>
             <Flex gap="sm" align="center" wrap={false}>
-                <ChevronDown size={arrowSize} class="arrow" />
+                <ChevronRightIcon size={arrowSize} class="arrow" />
                 {#if !summarySnippet}
                     <p class="summary-text">{summary}</p>
                 {:else}
@@ -58,21 +52,35 @@
                 {/if}
             </Flex>
         </summary>
-        <div
-            class="content"
-            style={`
-            ${framed ? 'padding: 0 var(--size-lg) var(--size-md) var(--size-lg);' : 'padding: 0;'}
-        `}
-        >
-            <hr noshade />
+        <div class="content" class:is-inline={inline}>
+            <hr />
             {@render children?.()}
         </div>
     </details>
 </Frame>
 
 <style>
+    :global(.details-frame) {
+        padding: 0 !important;
+    }
+
+    summary.is-inline {
+        padding: var(--size-md) 0;
+    }
+
+    summary:not(.is-inline) {
+        padding: var(--size-md);
+    }
+
+    .content:not(.is-inline) {
+        padding: var(--size-md);
+        padding-top: 0;
+    }
+
     .content {
-        padding: 0 var(--size-lg) var(--size-md) var(--size-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
     }
 
     :global(details .arrow) {
@@ -80,15 +88,7 @@
     }
 
     :global(details[open] .arrow) {
-        transform: rotate(180deg);
-    }
-
-    hr {
-        margin: 0 var(--size-xxs) var(--size-md) var(--size-xxs);
-        color: var(--color-fg-high);
-        border-color: var(--color-border);
-        background-color: var(--color-fg-high);
-        border-bottom: 0;
+        transform: rotate(90deg);
     }
 
     .summary-text {
