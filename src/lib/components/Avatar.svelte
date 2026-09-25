@@ -12,7 +12,14 @@
         initials?: string;
     };
 
-    const { src, alt = 'Avatar', size = 'sm', initials, class: className }: Props = $props();
+    const {
+        src,
+        alt = 'Avatar',
+        size = 'sm',
+        initials,
+        class: className,
+        ...rest
+    }: Props = $props();
 
     const initialsLimit = 4;
 
@@ -31,6 +38,7 @@
         height: var(--size-${size});
         font-size: calc(var(--size-${size}) / ${Math.PI});
     `}
+    {...rest}
 >
     {#if src}
         <img {src} {alt} />
