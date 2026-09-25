@@ -132,6 +132,7 @@ button {
     line-height: normal;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
+    appearance: none;
     -webkit-appearance: none;
 }
 
@@ -173,6 +174,14 @@ dialog {
     padding: 0;
     border-radius: var(--corner-radius);
     background: transparent;
+}
+
+hr {
+    border: none;
+    margin: 0;
+    padding: 0;
+    height: 1px;
+    background-color: var(--color-border);
 }
 
 /* Utility classes */
