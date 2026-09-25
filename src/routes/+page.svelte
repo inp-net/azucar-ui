@@ -93,7 +93,6 @@
     </Stack>
 
     <Details
-        framed
         summary="Settings"
         style="position: sticky; top: var(--size-lg); z-index: 10;"
         transparent
@@ -177,13 +176,13 @@
 
     <Stack>
         <h2>Details</h2>
-        <Details summary="This is a Detail">
+        <Details inline summary="This is a Detail">
             <p>Toulouse !</p>
         </Details>
-        <Details framed border shadow summary="This is a Framed Detail">
+        <Details border shadow summary="This is a Framed Detail">
             <p>net7</p>
         </Details>
-        <Details framed>
+        <Details>
             {#snippet summarySnippet()}
                 <Flex align="center" justify="space-between" style="flex-grow: 1">
                     <Avatar size="lg" alt="Avatar" />
@@ -366,19 +365,31 @@
                 <p>This is a frame.</p>
             </Frame>
             <Frame shadow>
-                <p>This is a frame with a shadow.</p>
+                <p>With a shadow.</p>
             </Frame>
 
             <Frame border>
-                <p>This is a frame with a border.</p>
+                <p>With a border.</p>
             </Frame>
 
             <Frame transparent>
-                <p>This is a semi-transparent frame.</p>
+                <p>Semi-transparent frame.</p>
             </Frame>
 
             <Frame transparent border shadow>
-                <p>This is a semi-transparent frame with a border and a shadow.</p>
+                <p>Semi-transparent, border and shadow.</p>
+            </Frame>
+
+            <Frame interactive>
+                <p>Interactive.</p>
+            </Frame>
+
+            <Frame interactive shadow>
+                <p>Interactive with shadow.</p>
+            </Frame>
+
+            <Frame interactive border shadow>
+                <p>Interactive with border and shadow.</p>
             </Frame>
 
             <Frame class="neutral">
