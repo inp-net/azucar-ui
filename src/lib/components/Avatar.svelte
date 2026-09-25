@@ -1,17 +1,18 @@
 <script lang="ts">
     import type { Size } from '$lib/types.ts';
+    import type { HTMLAttributes } from 'svelte/elements';
 
     // --- Avatar ---
     // A simple avatar component that displays a user's profile picture or initials.
 
-    type Props = {
+    type Props = HTMLAttributes<HTMLDivElement> & {
         src?: string;
         alt: string;
         size?: Size;
         initials?: string;
     };
 
-    const { src, alt = 'Avatar', size = 'sm', initials }: Props = $props();
+    const { src, alt = 'Avatar', size = 'sm', initials, class: className }: Props = $props();
 
     const initialsLimit = 4;
 
@@ -24,7 +25,7 @@
 </script>
 
 <div
-    class={`avatar`}
+    class={`avatar ${className || ''}`}
     style={`
         width: var(--size-${size});
         height: var(--size-${size});
