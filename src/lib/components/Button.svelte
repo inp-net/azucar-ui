@@ -41,19 +41,6 @@
 
     // Makes the icon bigger if there are no children
     const iconSize = $derived(children ? '1em' : '1.25em');
-
-    const classes = $derived(
-        [
-            'btn',
-            `btn-${variant}`,
-            icon && 'btn-has-icon',
-            !children && 'btn-icon-only',
-            loading && 'btn-loading',
-            className
-        ]
-            .filter(Boolean)
-            .join(' ')
-    );
 </script>
 
 <svelte:element
@@ -64,7 +51,14 @@
     aria-disabled={disabled}
     tabindex={href && disabled ? -1 : undefined}
     bind:this={ref}
-    class={classes}
+    class={[
+        'btn',
+        `btn-${variant}`,
+        icon && 'btn-has-icon',
+        !children && 'btn-icon-only',
+        loading && 'btn-loading',
+        className
+    ]}
     {...rest}
 >
     {#if icon || loading}

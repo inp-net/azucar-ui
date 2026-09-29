@@ -23,12 +23,14 @@
 </script>
 
 <div
-    class={`frame
-		${transparent ? 'is-transparent' : ''}
-		${shadow ? 'has-shadow' : ''}
-		${border ? 'has-border' : ''}
-        ${interactive ? 'is-interactive' : ''}
-		${className || ''}`}
+    class={[
+        'frame',
+        transparent && 'is-transparent',
+        shadow && 'has-shadow',
+        border && 'has-border',
+        interactive && 'is-interactive',
+        className
+    ]}
     {...rest}
 >
     {@render children?.()}

@@ -20,13 +20,9 @@
         class: className,
         ...rest
     }: Props = $props();
-
-    const classes = $derived(
-        ['slider-root', children && 'has-label', className].filter(Boolean).join(' ')
-    );
 </script>
 
-<label class={classes}>
+<label class={['slider-root', children && 'has-label', className]}>
     {#if children}
         <span class="label">
             {@render children?.()}

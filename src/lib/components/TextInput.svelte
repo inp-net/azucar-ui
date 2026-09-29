@@ -23,13 +23,9 @@
         style,
         ...rest
     }: Props = $props();
-
-    const classes = $derived(
-        ['text-input', icon && 'text-input-has-icon', className].filter(Boolean).join(' ')
-    );
 </script>
 
-<label class={classes} {style} for={id}>
+<label class={['text-input', icon && 'text-input-has-icon', className]} {style} for={id}>
     {#if children}
         <span class="label">
             {@render children?.()}

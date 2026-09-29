@@ -26,13 +26,9 @@
         loading = false,
         ...rest
     }: Props = $props();
-
-    const classes = $derived(
-        ['toast', variant, loading && 'toast-loading', className].filter(Boolean).join(' ')
-    );
 </script>
 
-<Frame border class={classes} {...rest}>
+<Frame border class={['toast', variant, loading && 'toast-loading', className]} {...rest}>
     <Flex gap="sm" align="center" wrap={false}>
         <StatusIcon {variant} {customIcon} {loading} />
 

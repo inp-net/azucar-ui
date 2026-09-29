@@ -13,11 +13,9 @@
     const { variant = 'default', icon, class: className, children, ...rest }: Props = $props();
 
     const iconSize = '0.9em';
-
-    const classes = $derived(['badge', `badge-${variant}`, className].join(' '));
 </script>
 
-<div class={classes} {...rest}>
+<div class={['badge', `badge-${variant}`, className]} {...rest}>
     {#if icon}
         <!-- making a container fixed size reduce overhead, no need to add size
              parameters to svg -->
