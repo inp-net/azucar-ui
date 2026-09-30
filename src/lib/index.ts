@@ -8,6 +8,7 @@ export { default as Scroll } from './components/layout/Scroll.svelte';
 
 // Basic components
 export { default as Avatar } from './components/Avatar.svelte';
+export { default as AvatarGroup } from './components/AvatarGroup.svelte';
 export { default as Badge } from './components/Badge.svelte';
 export { default as Button } from './components/Button.svelte';
 export { default as ButtonGroup } from './components/ButtonGroup.svelte';

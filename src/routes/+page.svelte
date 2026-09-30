@@ -3,6 +3,7 @@
     import Icon from '$lib/internal/Icon.svelte';
     import {
         Avatar,
+        AvatarGroup,
         Badge,
         Button,
         ButtonGroup,
@@ -432,6 +433,28 @@
                 size="lg"
             />
             <Avatar alt="Bureau des Eleves" size="lg" />
+            <AvatarGroup size="xl" limit={3}>
+                <Avatar
+                    src="https://churros.inpt.fr/storage/groups/dark/net7-n7.png"
+                    alt="net7"
+                    size="xl"
+                />
+                <Avatar
+                    src="https://churros.inpt.fr/storage/groups/7recette-n7.png"
+                    alt="7recettes"
+                    size="xl"
+                />
+                <Avatar
+                    src="https://churros.inpt.fr/storage/groups/fanfare-n7.png"
+                    alt="Fanfare"
+                    size="xl"
+                />
+                <Avatar
+                    src="https://churros.inpt.fr/storage/groups/light/skus07ltrsiimapm.png"
+                    alt="Bureau des Eleves"
+                    size="xl"
+                />
+            </AvatarGroup>
         </Flex>
     </Stack>
 
