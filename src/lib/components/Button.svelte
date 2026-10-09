@@ -2,7 +2,7 @@
     import { LoaderCircleIcon } from '@lucide/svelte';
     import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
     import type { Component } from 'svelte';
-    import IconWrapper from '$lib/internal/IconWrapper.svelte';
+    import IconWrapper from '#lib/internal/IconWrapper.svelte';
 
     // --- Button ---
     // The button, pillar of interaction.
