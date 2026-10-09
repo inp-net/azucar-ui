@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
-    import type { Size } from '$lib/types.ts';
+    import type { Size } from '#lib/types.ts';
     import Flex from './Flex.svelte';
     import type * as CSS from 'csstype';
 

@@ -2,7 +2,7 @@
     import type { HTMLSelectAttributes } from 'svelte/elements';
     import type { Snippet } from 'svelte';
     import { ChevronDown } from '@lucide/svelte';
-    import RequiredStar from '$lib/internal/RequiredStar.svelte';
+    import RequiredStar from '#lib/internal/RequiredStar.svelte';
 
     // --- Select ---
     // Select is an Input where you choose between a selection.

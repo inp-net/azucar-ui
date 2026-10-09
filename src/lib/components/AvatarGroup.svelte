@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount, type Snippet } from 'svelte';
-    import { Avatar, type Size } from '$lib/index.ts';
+    import { Avatar, type Size } from '#lib/index.ts';
 
     type Props = {
         children: Snippet;

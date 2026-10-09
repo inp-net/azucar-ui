@@ -3,7 +3,7 @@
     import Switch from '../components/Switch.svelte';
     import Slider from '../components/Slider.svelte';
     import Stack from '../components/layout/Stack.svelte';
-    import TextInput from '$lib/components/TextInput.svelte';
+    import TextInput from '#lib/components/TextInput.svelte';
 
     // --- Picker ---
     // A simple component that allows you to pick a base color and toggle dark mode.

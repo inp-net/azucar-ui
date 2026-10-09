@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Picker from '$lib/internal/Picker.svelte';
-    import Icon from '$lib/internal/Icon.svelte';
+    import Picker from '#lib/internal/Picker.svelte';
+    import Icon from '#lib/internal/Icon.svelte';
     import {
         Avatar,
         AvatarGroup,
@@ -24,7 +24,7 @@
         Skeleton,
         SkeletonText,
         Scroll
-    } from '$lib/index.ts';
+    } from '#lib/index.ts';
     import {
         CatIcon,
         CheckIcon,

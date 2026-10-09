@@ -1,5 +1,5 @@
 <script lang="ts">
-    import RequiredStar from '$lib/internal/RequiredStar.svelte';
+    import RequiredStar from '#lib/internal/RequiredStar.svelte';
     import type { HTMLInputAttributes } from 'svelte/elements';
 
     // --- Switch ---
