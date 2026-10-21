@@ -18,6 +18,7 @@
         size = 'sm',
         initials,
         class: className,
+        style,
         ...rest
     }: Props = $props();
 
@@ -36,7 +37,8 @@
     style={`
         width: var(--size-${size});
         height: var(--size-${size});
-        font-size: calc(var(--size-${size}) / ${Math.PI});
+        font-size: calc(var(--size-${size}) / ${Math.PI}); 
+        ${style || ''}
     `}
     {...rest}
 >
