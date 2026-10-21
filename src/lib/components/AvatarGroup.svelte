@@ -51,8 +51,8 @@
         {@render children?.()}
         {#if childrenCount > limit}
             <Avatar
-                class="avatar-group-overflow"
-                style={`background-color: var(--color-border);`}
+                class="avatar-group-overflow neutral"
+                style={`background-color: var(--color-bg-active);`}
                 {size}
                 alt={`+ ${childrenCount - limit}`}
             />
