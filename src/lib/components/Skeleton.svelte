@@ -18,14 +18,18 @@
         width = '100%',
         height = '1em',
         borderRadius = 'var(--corner-radius)',
-        style: styleProp,
+        style,
         ...rest
     }: Props = $props();
 </script>
 
 <div
     class={`skeleton neutral ${className || ''}`}
-    style={`width: ${width}; height: ${height}; border-radius: ${borderRadius}${styleProp ? `; ${styleProp}` : ''};`}
+    style={`
+        width: ${width};
+        height: ${height};
+        border-radius: ${borderRadius};
+        ${style ?? ''}`}
     {...rest}
 >
     {@render children?.()}
