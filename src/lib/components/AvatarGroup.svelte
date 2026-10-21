@@ -50,7 +50,12 @@
     {#if isReady}
         {@render children?.()}
         {#if childrenCount > limit}
-            <Avatar class="avatar-group-overflow" {size} alt={`+ ${childrenCount - limit}`} />
+            <Avatar
+                class="avatar-group-overflow"
+                style={`background-color: var(--color-border);`}
+                {size}
+                alt={`+ ${childrenCount - limit}`}
+            />
         {/if}
     {:else}
         <!-- Show skeleton placeholders waiting for limitChildren execution -->
