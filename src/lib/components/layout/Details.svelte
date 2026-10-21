@@ -15,7 +15,7 @@
         transparent?: boolean;
         shadow?: boolean;
         border?: boolean;
-        isOpen?: boolean;
+        open?: boolean;
     };
 
     let {
@@ -25,7 +25,7 @@
         transparent = false,
         shadow = false,
         border = false,
-        isOpen = $bindable(false),
+        open = $bindable(false),
         children,
         ...rest
     }: Props = $props();
@@ -41,7 +41,7 @@
     interactive={!inline}
     {...rest}
 >
-    <details open={isOpen}>
+    <details bind:open>
         <summary class:is-inline={inline}>
             <Flex gap="sm" align="center" wrap={false}>
                 <ChevronRightIcon size={arrowSize} class="arrow" />
