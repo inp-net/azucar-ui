@@ -55,13 +55,13 @@
         border-radius: var(--corner-radius-full);
         overflow: hidden;
         background-color: var(--color-bg-solid);
+        color: var(--color-fg-solid);
     }
 
     .initials {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-fg-solid);
         font-weight: bold;
         height: 100%;
     }
