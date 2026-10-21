@@ -64,6 +64,10 @@
         padding: 0 !important;
     }
 
+    summary {
+        user-select: none;
+    }
+
     summary.is-inline {
         padding: var(--size-md) 0;
     }
