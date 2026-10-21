@@ -28,7 +28,6 @@
         align = 'stretch',
         justify = 'flex-start',
         children,
-        style: customStyle,
         ...rest
     }: Props = $props();
 </script>
@@ -43,7 +42,6 @@
         {justify}
         wrap={false}
         class="scroll-content"
-        style={customStyle}
         {...rest}
     >
         {@render children?.()}
