@@ -1,7 +1,8 @@
 <script lang="ts">
-    import { onMount, type Snippet } from 'svelte';
+    import { type Snippet } from 'svelte';
     import Avatar from './Avatar.svelte';
     import type { Size } from '#lib/types.ts';
+    import Skeleton from './Skeleton.svelte';
 
     type Props = {
         children: Snippet;
@@ -16,13 +17,7 @@
     let { children, size, limit = 3 }: Props = $props();
 
     let childrenCount = $state(0);
-    let avatarSize = $state<string | null>(null);
-
-    onMount(() => {
-        avatarSize = window
-            .getComputedStyle(document.documentElement)
-            .getPropertyValue(`--size-${size}`);
-    });
+    let isReady = $state(false);
 
     // can't do it in the markup because the children are not available yet
     // so we need to use a mutation observer to hide the extra children
@@ -34,6 +29,7 @@
             );
             childrenCount = children.length;
             children.forEach((child, index) => ((child as HTMLElement).hidden = index >= limit));
+            isReady = true;
         };
         update();
 
@@ -50,10 +46,21 @@
     }
 </script>
 
-<div use:limitChildren={limit} class="avatar-group" style:--avatar-size={avatarSize}>
-    {@render children?.()}
-    {#if childrenCount > limit}
-        <Avatar class="avatar-group-overflow" {size} alt={`+ ${childrenCount - limit}`} />
+<div use:limitChildren={limit} class="avatar-group" style:--avatar-size={`var(--size-${size})`}>
+    {#if isReady}
+        {@render children?.()}
+        {#if childrenCount > limit}
+            <Avatar class="avatar-group-overflow" {size} alt={`+ ${childrenCount - limit}`} />
+        {/if}
+    {:else}
+        <!-- Show skeleton placeholders waiting for limitChildren execution -->
+        {#each Array(limit + 1) as _}
+            <Skeleton
+                width={`var(--size-${size})`}
+                height={`var(--size-${size})`}
+                borderRadius="var(--corner-radius-full)"
+            />
+        {/each}
     {/if}
 </div>
 
