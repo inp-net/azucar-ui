@@ -5,7 +5,7 @@
     import Stack from './layout/Stack.svelte';
 
     type Props = HTMLAttributes<HTMLElement> & {
-        tabs: string[];
+        tabs: readonly string[];
         selected?: number;
         content?: Snippet<[string]>;
     };
