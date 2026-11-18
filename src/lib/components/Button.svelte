@@ -25,6 +25,7 @@
         variant?: 'default' | 'outline' | 'ghost';
         ref?: HTMLElement | null;
         icon?: Component;
+        underline?: boolean;
         loading?: boolean;
     };
 
@@ -35,6 +36,7 @@
         href,
         ref,
         icon,
+        underline,
         loading,
         class: className,
         children,
@@ -56,15 +58,20 @@
     class={[
         'btn',
         `btn-${variant}`,
-        icon && 'btn-has-icon',
+        (icon || loading) && 'btn-has-icon',
         !children && 'btn-icon-only',
+        underline && 'btn-underline',
         loading && 'btn-loading',
         className
     ]}
     {...rest}
 >
     {#if icon || loading}
-        <IconWrapper icon={loading ? LoaderCircleIcon : icon} size={iconSize} />
+        <IconWrapper
+            class={loading ? 'loading-icon' : ''}
+            icon={loading ? LoaderCircleIcon : icon}
+            size={iconSize}
+        />
     {/if}
 
     {#if children}
@@ -81,6 +88,7 @@
         border-radius: var(--corner-radius);
         gap: var(--gap-icon);
         padding: var(--padding-y-icon) var(--size-md);
+        text-decoration: none;
     }
 
     .btn-has-icon {
@@ -92,6 +100,10 @@
         padding: var(--padding-y-icon);
         aspect-ratio: 1;
         line-height: 1;
+    }
+
+    .btn-underline {
+        text-decoration: underline;
     }
 
     /* Default variant */
@@ -167,7 +179,6 @@
     }
 
     .btn-ghost:hover:not(:disabled) {
-        text-decoration: underline;
         color: var(--color-fg-high);
     }
 
