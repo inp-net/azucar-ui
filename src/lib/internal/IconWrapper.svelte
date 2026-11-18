@@ -7,14 +7,15 @@
     type Props = {
         icon?: Component;
         size?: string;
+        class?: string;
     };
 
-    let { icon, size }: Props = $props();
+    let { icon, size, class: className }: Props = $props();
 </script>
 
 {#if icon}
     {@const Icon = icon}
-    <div style={`--icon-size: ${size}`} class="icon-wrapper" aria-hidden="true">
+    <div style={`--icon-size: ${size}`} class={[`icon-wrapper`, className]} aria-hidden="true">
         <Icon {size} />
     </div>
 {/if}

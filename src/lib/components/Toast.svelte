@@ -29,7 +29,7 @@
 </script>
 
 <Frame border class={['toast', variant, loading && 'toast-loading', className]} {...rest}>
-    <Flex gap="sm" align="center" wrap={false}>
+    <Flex gap="sm" align="center" wrap={'nowrap'}>
         <StatusIcon {variant} {customIcon} {loading} />
 
         {@render children?.()}

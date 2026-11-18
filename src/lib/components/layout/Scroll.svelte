@@ -40,7 +40,7 @@
         {gap}
         {align}
         {justify}
-        wrap={false}
+        wrap={'nowrap'}
         class="scroll-content"
         {...rest}
     >

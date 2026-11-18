@@ -43,7 +43,7 @@
 >
     <details bind:open>
         <summary class:is-inline={inline}>
-            <Flex gap="sm" align="center" wrap={false}>
+            <Flex gap="sm" align="center" wrap={'nowrap'}>
                 <ChevronRightIcon size={arrowSize} class="arrow" />
                 {#if !summarySnippet}
                     <p class="summary-text">{summary}</p>

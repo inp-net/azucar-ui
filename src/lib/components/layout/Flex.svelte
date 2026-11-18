@@ -14,7 +14,7 @@
         align?: CSS.Properties['alignItems'];
         justify?: CSS.Properties['justifyContent'];
         gap?: Size;
-        wrap?: boolean;
+        wrap?: CSS.Properties['flexWrap'];
     };
 
     let {
@@ -24,7 +24,7 @@
         align = 'stretch',
         justify = 'flex-start',
         gap = 'md',
-        wrap = true,
+        wrap = 'wrap',
         style,
         children,
         ...rest
@@ -42,7 +42,7 @@
         max-width: 100%;
         min-width: 0;
         ${gap ? `gap:var(--size-${gap});` : ''}
-        flex-wrap:${wrap ? 'wrap' : 'nowrap'};
+        flex-wrap:${wrap};
         ${style ?? ''}
     `}
     {...rest}

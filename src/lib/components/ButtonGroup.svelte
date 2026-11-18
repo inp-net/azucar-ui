@@ -12,7 +12,7 @@
     let { children }: Props = $props();
 </script>
 
-<Flex class="button-group" gap="xs" wrap={false}>
+<Flex class="button-group" gap="xs" wrap={'nowrap'}>
     {@render children?.()}
 </Flex>
 

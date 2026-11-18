@@ -216,7 +216,7 @@
                     </Flex>
                     <p>This is a nice dialog.</p>
 
-                    <Flex wrap={false}>
+                    <Flex wrap={'nowrap'}>
                         <Button variant="outline">Cancel</Button>
                         <Button class="danger">Delete</Button>
                     </Flex>
@@ -231,6 +231,7 @@
         <Flex>
             <Button>Hello</Button>
             <Button href="#">Link</Button>
+            <Button href="#" underline={false} variant="ghost">Link</Button>
             <Button variant="outline">Hello</Button>
             <Button variant="ghost">Hello</Button>
             <Button disabled>Hello</Button>
