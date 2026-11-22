@@ -1,6 +1,7 @@
 <script lang="ts">
     import Picker from '#lib/internal/Picker.svelte';
     import Icon from '#lib/internal/Icon.svelte';
+    import Penpot from '#lib/internal/Penpot.svelte';
     import {
         Avatar,
         AvatarGroup,
@@ -102,7 +103,8 @@
     >
         <Stack>
             <Picker />
-            <Flex justify="space-between" style="margin-left: auto">
+            <Flex justify="space-between" style="margin-left: auto" gap="xs">
+                <Penpot />
                 <Button icon={CopyIcon} variant="outline" onclick={copySettings}>Copy</Button>
             </Flex>
         </Stack>
