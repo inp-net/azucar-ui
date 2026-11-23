@@ -8,21 +8,34 @@
         tabs: readonly string[];
         selected?: number;
         content?: Snippet<[string]>;
+        onchange?: (index: number) => void;
     };
 
-    let { content, class: className, tabs = [], selected = $bindable(), ...rest }: Props = $props();
+    let {
+        content,
+        class: className,
+        tabs = [],
+        selected = $bindable(0),
+        onchange,
+        ...rest
+    }: Props = $props();
 
-    selected = selected ?? 0;
     const activeTab = $derived(tabs[selected] ?? '');
+
+    function selectTab(index: number) {
+        selected = index;
+        onchange?.(index);
+    }
 </script>
 
 <Flex {...rest} class={className} gap="zero">
     {#each tabs as tab, $index}
         <Stack gap="xs" class="tabs-item">
             <button
+                type="button"
                 class="tabs-button"
                 class:selected={selected === $index}
-                onclick={() => (selected = $index)}
+                onclick={() => selectTab($index)}
             >
                 {tab}
             </button>
